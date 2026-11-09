@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Accel Financial</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Accel Financial Services: business accounts, corporate cards, treasury, global payments and credit in one platform, with an AI finance co-pilot.">
+<meta name="theme-color" content="#0F3B32">
+<meta property="og:title" content="Accel Financial — The financial stack for companies in a hurry">
+<meta property="og:description" content="Accounts, cards, treasury, global payments and credit in one platform.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230F3B32'/%3E%3Cpath d='M9 23 16 9l7 14' fill='none' stroke='%23F6F7F3' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M12.6 18h6.8' stroke='%23FF5B23' stroke-width='3.2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist:wght@400..600&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- Announcement -->
+<div class="announce">
+  <div class="wrap announce__in">
+    <span class="tag tag--signal">New</span>
+    <span class="announce__long">Accel Pilot now forecasts your 13-week cash position in real time.</span><span class="announce__short">Pilot now forecasts 13-week cash.</span>
+    <a href="#pilot" class="announce__link">See how <span aria-hidden="true">→</span></a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="header" id="top">
+  <div class="wrap header__in">
+    <a href="#top" class="brand" aria-label="Accel Financial home">
+      <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" class="mark-bg"/><path d="M9 23 16 9l7 14" class="mark-a"/><path d="M12.6 18h6.8" class="mark-bar"/></svg>
+      <span class="brand__name">Accel<span class="brand__sub">Financial</span></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="#products">Products</a>
+      <a href="#pilot">Accel Pilot</a>
+      <a href="#advisory">Advisory</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#security">Security</a>
+      <div class="nav__mobile-cta">
+        <a href="#start" class="btn btn--ghost">Sign in</a>
+        <a href="#start" class="btn btn--primary">Open an account</a>
+      </div>
+    </nav>
+    <div class="header__cta">
+      <a href="#start" class="link-quiet">Sign in</a>
+      <a href="#start" class="btn btn--primary btn--sm">Open an account</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- Hero -->
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow load" style="--d:0">Business banking · Treasury · Payments · Credit</p>
+      <h1 class="display load" style="--d:1">The financial stack for companies <em>in a hurry.</em></h1>
+      <p class="lede load" style="--d:2">Accounts, cards, treasury, global payouts and credit in one place. Accel Pilot, our AI finance co-pilot, reconciles every transaction and closes your books while you sleep.</p>
+      <div class="hero__actions load" style="--d:3">
+        <a href="#start" class="btn btn--primary btn--lg">Open an account <span aria-hidden="true">→</span></a>
+        <a href="#pilot" class="btn btn--ghost btn--lg">Watch Pilot work</a>
+      </div>
+      <ul class="hero__proof load" style="--d:4">
+        <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3 3 7-7"/></svg>Approved in 1 business day</li>
+        <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3 3 7-7"/></svg>No monthly fees to start</li>
+        <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3 3 7-7"/></svg>Live in 38 currencies</li>
+      </ul>
+    </div>
+
+    <!-- Product mockup -->
+    <div class="hero__visual load" style="--d:2" aria-label="Accel dashboard preview" role="img">
+      <div class="dash">
+        <div class="dash__top">
+          <div class="dash__dots"><i></i><i></i><i></i></div>
+          <span class="dash__url mono">app.accel.finance/overview</span>
+        </div>
+        <div class="dash__body">
+          <div class="dash__head">
+            <div>
+              <p class="dash__label">Total balance · all entities</p>
+              <p class="dash__balance mono" id="balance" data-value="4812390.22">$4,812,390.22</p>
+              <p class="dash__delta mono"><span class="up">▲ 12.4%</span> vs. last 30 days</p>
+            </div>
+            <div class="dash__seg" aria-hidden="true"><span>1W</span><span class="is-on">1M</span><span>1Y</span></div>
+          </div>
+          <svg class="dash__chart" viewBox="0 0 600 180" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="g-area" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stop-color="#FF5B23" stop-opacity=".35"/>
+                <stop offset="1" stop-color="#FF5B23" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <g class="dash__grid"><path d="M0 45H600M0 90H600M0 135H600"/></g>
+            <path class="dash__area" d="M0.0 154.0 C13.0 154.0 13.0 146.0 26.1 146.0 C39.1 146.0 39.1 150.0 52.2 150.0 C65.2 150.0 65.2 139.3 78.3 139.3 C91.3 139.3 91.3 142.0 104.3 142.0 C117.4 142.0 117.4 130.0 130.4 130.0 C143.5 130.0 143.5 132.7 156.5 132.7 C169.6 132.7 169.6 124.7 182.6 124.7 C195.7 124.7 195.7 127.3 208.7 127.3 C221.7 127.3 221.7 115.3 234.8 115.3 C247.8 115.3 247.8 108.7 260.9 108.7 C273.9 108.7 273.9 112.7 287.0 112.7 C300.0 112.7 300.0 100.7 313.0 100.7 C326.1 100.7 326.1 94.0 339.1 94.0 C352.2 94.0 352.2 96.7 365.2 96.7 C378.3 96.7 378.3 84.7 391.3 84.7 C404.3 84.7 404.3 74.0 417.4 74.0 C430.4 74.0 430.4 78.0 443.5 78.0 C456.5 78.0 456.5 66.0 469.6 66.0 C482.6 66.0 482.6 55.3 495.7 55.3 C508.7 55.3 508.7 58.0 521.7 58.0 C534.8 58.0 534.8 46.0 547.8 46.0 C560.9 46.0 560.9 35.3 573.9 35.3 C587.0 35.3 587.0 20.7 600.0 20.7 L600 180 L0 180Z" fill="url(#g-area)"/>
+            <path class="dash__line" pathLength="1" d="M0.0 154.0 C13.0 154.0 13.0 146.0 26.1 146.0 C39.1 146.0 39.1 150.0 52.2 150.0 C65.2 150.0 65.2 139.3 78.3 139.3 C91.3 139.3 91.3 142.0 104.3 142.0 C117.4 142.0 117.4 130.0 130.4 130.0 C143.5 130.0 143.5 132.7 156.5 132.7 C169.6 132.7 169.6 124.7 182.6 124.7 C195.7 124.7 195.7 127.3 208.7 127.3 C221.7 127.3 221.7 115.3 234.8 115.3 C247.8 115.3 247.8 108.7 260.9 108.7 C273.9 108.7 273.9 112.7 287.0 112.7 C300.0 112.7 300.0 100.7 313.0 100.7 C326.1 100.7 326.1 94.0 339.1 94.0 C352.2 94.0 352.2 96.7 365.2 96.7 C378.3 96.7 378.3 84.7 391.3 84.7 C404.3 84.7 404.3 74.0 417.4 74.0 C430.4 74.0 430.4 78.0 443.5 78.0 C456.5 78.0 456.5 66.0 469.6 66.0 C482.6 66.0 482.6 55.3 495.7 55.3 C508.7 55.3 508.7 58.0 521.7 58.0 C534.8 58.0 534.8 46.0 547.8 46.0 C560.9 46.0 560.9 35.3 573.9 35.3 C587.0 35.3 587.0 20.7 600.0 20.7"/>
+          </svg>
+          <div class="dash__row">
+            <div class="dash__tile">
+              <p class="dash__label">Treasury yield · MTD</p>
+              <p class="mono dash__num">+$16,402.18</p>
+              <div class="bar"><i style="width:68%"></i></div>
+            </div>
+            <div class="dash__tile">
+              <p class="dash__label">Card spend · Oct</p>
+              <p class="mono dash__num">$212,880.40</p>
+              <div class="bar bar--alt"><i style="width:44%"></i></div>
+            </div>
+          </div>
+          <ul class="tx">
+            <li><span class="tx__ic tx__ic--out">↗</span><span class="tx__who">Lindqvist GmbH<small>Wire · EUR → SEPA Instant</small></span><span class="mono tx__amt">−€48,200.00</span></li>
+            <li><span class="tx__ic tx__ic--in">↙</span><span class="tx__who">Stripe payout<small>ACH · same day</small></span><span class="mono tx__amt up">+$91,334.70</span></li>
+            <li><span class="tx__ic tx__ic--out">↗</span><span class="tx__who">AWS<small>Card ··4021 · auto-coded to COGS</small></span><span class="mono tx__amt">−$18,442.13</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="float float--a">
+        <span class="float__dot"></span>
+        <div><strong>Payment settled</strong><span class="mono">€48,200 → Berlin · 2.1s</span></div>
+      </div>
+      <div class="float float--b">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17l6-6 4 4 6-7"/></svg>
+        <div><strong>Pilot closed October</strong><span class="mono">1,284 txns · 0 exceptions</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Customers -->
+<section class="logos" aria-label="Companies building on Accel">
+  <div class="wrap">
+    <p class="logos__title">Finance teams at 42,000+ fast-growing companies run on Accel</p>
+    <ul class="logos__row">
+      <li class="lg lg--1">Halden</li>
+      <li class="lg lg--2">kestrel<b>bio</b></li>
+      <li class="lg lg--3">ORBITWISE</li>
+      <li class="lg lg--4">Fernway&nbsp;&amp;&nbsp;Co</li>
+      <li class="lg lg--5">quanta<i>freight</i></li>
+      <li class="lg lg--6">LUMEN/LABS</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Payment rails status -->
+<section class="rails" aria-label="Payment rail status">
+  <div class="rails__track">
+    <ul class="rails__list" id="rails"></ul>
+  </div>
+</section>
+
+<!-- Products -->
+<section class="section" id="products">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">The platform</p>
+      <h2 class="h2">Five products. One login. Zero spreadsheets.</h2>
+      <p class="sec-head__p">Each product works on its own and gets better together. Money moves between them instantly, and every dollar is categorized, matched and ready for your ledger.</p>
+    </div>
+
+    <div class="bento">
+      <!-- Accounts -->
+      <article class="card card--paper b-accounts">
+        <div class="card__text">
+          <p class="card__kicker">Accel Operating</p>
+          <h3 class="h3">Business accounts that organize themselves</h3>
+          <p>Open sub-accounts for payroll, taxes and runway in seconds. Set rules that sweep every deposit to the right place.</p>
+        </div>
+        <div class="ui-accounts" aria-hidden="true">
+          <div class="acc"><span>Operating</span><span class="mono">$1,284,020</span><div class="bar"><i style="width:82%"></i></div></div>
+          <div class="acc"><span>Payroll · auto-funded</span><span class="mono">$418,600</span><div class="bar"><i style="width:46%"></i></div></div>
+          <div class="acc"><span>Tax reserve · 21%</span><span class="mono">$269,640</span><div class="bar"><i style="width:31%"></i></div></div>
+          <div class="acc__rule mono">RULE · On deposit → move 21% to Tax reserve</div>
+        </div>
+      </article>
+
+      <!-- Cards -->
+      <article class="card card--pine b-cards">
+        <div class="card__text">
+          <p class="card__kicker">Accel Card</p>
+          <h3 class="h3">Corporate cards with limits that think</h3>
+          <p>Issue virtual cards in a click, set per-merchant limits, and earn up to 1.75% back on every swipe.</p>
+        </div>
+        <div class="ui-card" aria-hidden="true">
+          <div class="plastic">
+            <div class="plastic__top">
+              <svg viewBox="0 0 32 32"><path d="M9 23 16 9l7 14" class="mark-a"/><path d="M12.6 18h6.8" class="mark-bar"/></svg>
+              <span class="mono">Virtual</span>
+            </div>
+            <div class="plastic__chip"></div>
+            <div class="plastic__num mono">•••• •••• •••• 4021</div>
+            <div class="plastic__foot"><span>Design team</span><span class="mono">12/29</span></div>
+          </div>
+          <div class="limit">
+            <div class="limit__row"><span>Monthly limit</span><span class="mono">$8,420 / $12,000</span></div>
+            <div class="bar bar--light"><i style="width:70%"></i></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Treasury -->
+      <article class="card card--mint b-treasury">
+        <p class="card__kicker">Accel Treasury</p>
+        <p class="big-rate"><span class="mono">4.12</span><small>% APY*</small></p>
+        <h3 class="h3">Idle cash that earns its keep</h3>
+        <p>Balances above your threshold sweep into short-term U.S. Treasury bills daily. Withdraw same day.</p>
+      </article>
+
+      <!-- Global -->
+      <article class="card card--paper b-global">
+        <p class="card__kicker">Accel Global Pay</p>
+        <h3 class="h3">Pay anyone in 140 countries</h3>
+        <p>Send in 38 currencies at mid-market FX plus a flat 0.25%. Most transfers land the same day.</p>
+        <ul class="ccy" aria-label="Supported currencies include">
+          <li>USD</li><li>EUR</li><li>GBP</li><li>JPY</li><li>INR</li><li>SGD</li><li>MXN</li><li>BRL</li><li>AUD</li><li>CAD</li><li>CHF</li><li class="ccy__more">+27</li>
+        </ul>
+      </article>
+
+      <!-- Capital -->
+      <article class="card card--sky b-capital">
+        <p class="card__kicker">Accel Capital</p>
+        <h3 class="h3">Credit that grows with your revenue</h3>
+        <p>Revolving lines up to $5M, priced from your live financials instead of a 40-page application.</p>
+        <div class="gauge" aria-hidden="true">
+          <div class="gauge__row"><span>Available</span><span class="mono">$2.40M of $5.00M</span></div>
+          <div class="gauge__bar"><i style="width:48%"></i></div>
+          <div class="gauge__row gauge__row--muted"><span>Draw to account</span><span class="mono">T+0</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Treasury calculator -->
+<section class="section section--tight" id="calculator">
+  <div class="wrap">
+    <div class="calc">
+      <div class="calc__copy">
+        <p class="eyebrow">Treasury calculator</p>
+        <h2 class="h2">What is your idle cash costing you?</h2>
+        <p>Most business checking accounts pay close to nothing. Drag the slider to see what the same balance earns in Accel Treasury.</p>
+      </div>
+      <div class="calc__panel">
+        <label for="cash" class="calc__label">Average idle balance</label>
+        <output id="cashOut" for="cash" class="calc__value mono">$2,500,000</output>
+        <input type="range" id="cash" min="100000" max="20000000" step="100000" value="2500000">
+        <div class="calc__scale mono" aria-hidden="true"><span>$100K</span><span>$20M</span></div>
+        <div class="calc__results">
+          <div class="calc__res">
+            <span>Typical bank · 0.45% APY</span>
+            <strong class="mono" id="bankOut">$11,250</strong>
+          </div>
+          <div class="calc__res calc__res--accel">
+            <span>Accel Treasury · 4.12% APY*</span>
+            <strong class="mono" id="accelOut">$103,000</strong>
+          </div>
+        </div>
+        <p class="calc__diff">That is <strong class="mono" id="diffOut">$91,750</strong> more every year, or about <strong class="mono" id="hireOut">0.6</strong> of a senior hire.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Accel Pilot -->
+<section class="pilot" id="pilot">
+  <div class="wrap pilot__grid">
+    <div class="pilot__copy">
+      <p class="eyebrow eyebrow--onpine">Accel Pilot · AI finance co-pilot</p>
+      <h2 class="h2">Your month-end close, finished before month-end.</h2>
+      <p>Pilot reads every transaction, receipt and invoice as it happens. It codes entries to your chart of accounts, flags anything odd, and answers questions about your money in plain English.</p>
+      <ul class="pilot__list">
+        <li><strong>Auto-reconciliation</strong><span>Matches bank, card and payout activity to your ledger in QuickBooks, Xero or NetSuite.</span></li>
+        <li><strong>13-week cash forecast</strong><span>Updated with every transaction, with scenarios for hiring plans and fundraising.</span></li>
+        <li><strong>Anomaly alerts</strong><span>Duplicate invoices, unusual vendor changes and spend spikes caught before they post.</span></li>
+      </ul>
+    </div>
+
+    <div class="chat" aria-label="Example conversation with Accel Pilot">
+      <div class="chat__head">
+        <span class="chat__avatar" aria-hidden="true">
+          <svg viewBox="0 0 32 32"><path d="M9 23 16 9l7 14" class="mark-a"/><path d="M12.6 18h6.8" class="mark-bar"/></svg>
+        </span>
+        <div><strong>Pilot</strong><span>Connected to 4 accounts · NetSuite</span></div>
+      </div>
+      <div class="chat__msg chat__msg--me">Why did our burn go up in October?</div>
+      <div class="chat__msg chat__msg--ai">
+        <p>Net burn rose <strong>12.3%</strong> to <strong class="mono">$684,200</strong>. Three things drove it:</p>
+        <ol class="chat__bars">
+          <li><span>Two new engineers (payroll)</span><span class="mono">+$41,800</span><i style="--w:100%"></i></li>
+          <li><span>AWS usage spike, Oct 14–19</span><span class="mono">+$22,150</span><i style="--w:53%"></i></li>
+          <li><span>Annual Figma renewal</span><span class="mono">+$11,040</span><i style="--w:26%"></i></li>
+        </ol>
+        <p>The AWS spike traces to one staging cluster left running. Want me to set a $5,000 monthly alert on that card?</p>
+      </div>
+      <div class="chat__chips">
+        <button type="button" class="chip" data-reply="Done. Alert set at $5,000/month on card ··4021. I'll ping #finance in Slack if it trips.">Yes, set the alert</button>
+        <button type="button" class="chip" data-reply="Runway at the current burn is 26.4 months, down from 28.1 last month. Pausing the staging cluster gets you back to 27.3.">Show runway impact</button>
+      </div>
+      <div class="chat__reply" id="chatReply" hidden></div>
+      <div class="chat__input" aria-hidden="true">
+        <span>Ask about your cash, spend or forecast…</span>
+        <span class="chat__send">↑</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="sec-head sec-head--row">
+      <div>
+        <p class="eyebrow">Getting started</p>
+        <h2 class="h2">From application to first wire in about a day.</h2>
+      </div>
+      <a href="#start" class="btn btn--ghost">Start your application <span aria-hidden="true">→</span></a>
+    </div>
+    <ol class="steps">
+      <li class="step">
+        <span class="step__n mono">01</span>
+        <h3 class="h3">Apply in 10 minutes</h3>
+        <p>Tell us about your company and owners. Connect your incorporation docs and we pre-fill the rest.</p>
+        <span class="step__t mono">~10 min</span>
+      </li>
+      <li class="step">
+        <span class="step__n mono">02</span>
+        <h3 class="h3">Get verified</h3>
+        <p>Our compliance team reviews your application. Most companies are approved within one business day.</p>
+        <span class="step__t mono">≤ 1 business day</span>
+      </li>
+      <li class="step">
+        <span class="step__n mono">03</span>
+        <h3 class="h3">Move money</h3>
+        <p>Fund your account, issue cards, invite your team and connect your accounting software.</p>
+        <span class="step__t mono">Same day</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Advisory services -->
+<section class="section section--alt" id="advisory">
+  <div class="wrap advisory">
+    <div class="advisory__head">
+      <p class="eyebrow">Accel Advisory</p>
+      <h2 class="h2">Software for the routine. People for the big calls.</h2>
+      <p>When the decision is a fundraise, an acquisition or a new market, work with our in-house finance team. Former CFOs and treasurers who have done it before.</p>
+      <a href="#start" class="btn btn--primary">Talk to an advisor</a>
+    </div>
+    <div class="advisory__list">
+      <article class="svc">
+        <div class="svc__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1.2-3.6 3.9-5.5 7-5.5s5.8 1.9 7 5.5"/></svg></div>
+        <div>
+          <h3 class="h3">Fractional CFO</h3>
+          <p>A senior finance leader 1–3 days a week. Board decks, budgets, and hiring plans that hold up.</p>
+        </div>
+        <span class="svc__price mono">from $4,500/mo</span>
+      </article>
+      <article class="svc">
+        <div class="svc__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg></div>
+        <div>
+          <h3 class="h3">Treasury strategy</h3>
+          <p>Laddering, FX hedging and bank-risk diversification for balances over $10M.</p>
+        </div>
+        <span class="svc__price mono">included on Enterprise</span>
+      </article>
+      <article class="svc">
+        <div class="svc__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></svg></div>
+        <div>
+          <h3 class="h3">Audit &amp; raise readiness</h3>
+          <p>Clean books, a GAAP-ready close and a data room investors can diligence in a week.</p>
+        </div>
+        <span class="svc__price mono">fixed-fee projects</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Security + stats -->
+<section class="section" id="security">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Security &amp; scale</p>
+      <h2 class="h2">Built like a bank. Moves like software.</h2>
+    </div>
+    <div class="stats">
+      <div class="stat"><span class="stat__n mono" data-count="18" data-prefix="$" data-suffix="B+">$18B+</span><span class="stat__l">processed every year</span></div>
+      <div class="stat"><span class="stat__n mono" data-count="42000" data-suffix="+">42,000+</span><span class="stat__l">businesses on Accel</span></div>
+      <div class="stat"><span class="stat__n mono" data-count="140">140</span><span class="stat__l">countries reachable</span></div>
+      <div class="stat"><span class="stat__n mono">99.99%</span><span class="stat__l">platform uptime, trailing 12 months</span></div>
+    </div>
+    <div class="sec-grid">
+      <div class="sec-item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.1-8 9-4.6-.9-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
+        <h3>SOC 2 Type II</h3>
+        <p>Audited annually by an independent firm. Reports available under NDA.</p>
+      </div>
+      <div class="sec-item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+        <h3>AES-256 at rest, TLS 1.3 in transit</h3>
+        <p>Keys live in hardware security modules and rotate automatically.</p>
+      </div>
+      <div class="sec-item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="15" r="3"/><path d="M3 20c.8-2.6 3-4 6-4M11.5 12.5L14.5 13.5"/></svg>
+        <h3>Approvals &amp; roles</h3>
+        <p>Dual approval on wires, per-person permissions and a full audit trail of every action.</p>
+      </div>
+      <div class="sec-item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10l9-6 9 6M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/></svg>
+        <h3>Partner-bank custody</h3>
+        <p>Deposits are held at regulated partner banks, spread across institutions to extend coverage.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section section--alt" id="stories">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Customer stories</p>
+      <h2 class="h2">Finance leaders who stopped waiting on their bank.</h2>
+    </div>
+    <div class="quotes">
+      <figure class="quote quote--lead">
+        <blockquote>“We closed our Series B books in four days instead of three weeks. Pilot had already reconciled everything by the time our auditors asked.”</blockquote>
+        <figcaption><span class="avatar" style="--h:18">MO</span><span><strong>Maya Okafor</strong>CFO, Halden</span></figcaption>
+        <p class="quote__metric"><span class="mono">−81%</span> time to close</p>
+      </figure>
+      <figure class="quote">
+        <blockquote>“Paying contractors in nine countries used to be a weekly fire drill. Now it is one batch file on Friday morning.”</blockquote>
+        <figcaption><span class="avatar" style="--h:150">DR</span><span><strong>Diego Ramírez</strong>Head of Ops, Orbitwise</span></figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>“Treasury pays for our entire finance tooling budget, and then some. It took fifteen minutes to set up.”</blockquote>
+        <figcaption><span class="avatar" style="--h:220">PS</span><span><strong>Priya Shah</strong>VP Finance, Kestrel Bio</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="section" id="pricing">
+  <div class="wrap">
+    <div class="sec-head sec-head--center">
+      <p class="eyebrow">Pricing</p>
+      <h2 class="h2">Start free. Pay as you scale.</h2>
+      <div class="toggle" role="group" aria-label="Billing period">
+        <button type="button" class="toggle__btn" data-period="monthly" aria-pressed="false">Monthly</button>
+        <button type="button" class="toggle__btn is-on" data-period="annual" aria-pressed="true">Annual <span class="tag tag--mint">2 months free</span></button>
+      </div>
+    </div>
+    <div class="plans">
+      <article class="plan">
+        <h3 class="plan__name">Launch</h3>
+        <p class="plan__for">For new companies getting set up.</p>
+        <p class="plan__price"><span class="mono">$0</span><small>/month</small></p>
+        <a href="#start" class="btn btn--ghost btn--block">Open free account</a>
+        <ul class="plan__list">
+          <li>Operating account + 3 sub-accounts</li>
+          <li>5 virtual and 2 physical cards</li>
+          <li>Free domestic ACH and same-day ACH</li>
+          <li>Accel Treasury from $250K</li>
+          <li>QuickBooks and Xero sync</li>
+        </ul>
+      </article>
+      <article class="plan plan--feature">
+        <span class="plan__badge">Most popular</span>
+        <h3 class="plan__name">Scale</h3>
+        <p class="plan__for">For teams spending across borders.</p>
+        <p class="plan__price"><span class="mono" data-monthly="$179" data-annual="$149">$149</span><small>/month</small></p>
+        <a href="#start" class="btn btn--signal btn--block">Start 30-day trial</a>
+        <ul class="plan__list">
+          <li>Everything in Launch</li>
+          <li>Unlimited cards and sub-accounts</li>
+          <li>Global Pay in 38 currencies</li>
+          <li>Accel Pilot with 13-week forecast</li>
+          <li>Approval workflows and roles</li>
+          <li>NetSuite and Sage Intacct sync</li>
+        </ul>
+      </article>
+      <article class="plan">
+        <h3 class="plan__name">Enterprise</h3>
+        <p class="plan__for">For multi-entity and $10M+ balances.</p>
+        <p class="plan__price"><span>Custom</span></p>
+        <a href="#start" class="btn btn--ghost btn--block">Talk to sales</a>
+        <ul class="plan__list">
+          <li>Everything in Scale</li>
+          <li>Multi-entity consolidation</li>
+          <li>Dedicated treasury strategist</li>
+          <li>Custom FX pricing and hedging</li>
+          <li>SSO, SCIM and a 99.99% SLA</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--alt" id="faq">
+  <div class="wrap faq">
+    <div class="faq__head">
+      <p class="eyebrow">FAQ</p>
+      <h2 class="h2">Questions, answered.</h2>
+      <p>Still curious? Our team replies in under two hours on business days.</p>
+    </div>
+    <div class="faq__list">
+      <details open>
+        <summary>Is Accel a bank?</summary>
+        <p>No. Accel Financial Services is a financial technology company. Banking services are provided by our regulated partner banks, which hold your deposits.</p>
+      </details>
+      <details>
+        <summary>Who can open an account?</summary>
+        <p>Companies incorporated in the U.S., U.K. or E.U., from pre-seed startups to public companies. Sole proprietors are supported on the Launch plan.</p>
+      </details>
+      <details>
+        <summary>How does Accel Treasury earn yield?</summary>
+        <p>Balances above a threshold you set are swept into a portfolio of short-term U.S. Treasury bills. You can move money back to your operating account any business day, usually arriving the same day.</p>
+      </details>
+      <details>
+        <summary>Can I keep my current bank?</summary>
+        <p>Yes. Many customers start by connecting their existing bank to Accel Pilot for reconciliation, then move operating cash over when they are ready.</p>
+      </details>
+      <details>
+        <summary>What does Global Pay cost?</summary>
+        <p>The mid-market exchange rate plus a flat 0.25%, with no hidden spread. Domestic transfers in the U.S., U.K. and Eurozone are free.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="start">
+  <div class="wrap">
+    <div class="cta__box">
+      <div class="cta__lines" aria-hidden="true"></div>
+      <div class="cta__copy">
+        <h2 class="display display--cta">Get your finance stack <em>up to speed.</em></h2>
+        <p>Open an account in ten minutes. Bring your team, your cards and your ledger.</p>
+      </div>
+      <form class="cta__form" id="ctaForm" novalidate>
+        <label for="email" class="sr-only">Work email</label>
+        <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required>
+        <button class="btn btn--signal" type="submit">Get started</button>
+        <p class="cta__msg" id="ctaMsg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="#top" class="brand" aria-label="Accel Financial home">
+          <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" class="mark-bg"/><path d="M9 23 16 9l7 14" class="mark-a"/><path d="M12.6 18h6.8" class="mark-bar"/></svg>
+          <span class="brand__name">Accel<span class="brand__sub">Financial</span></span>
+        </a>
+        <p>The financial stack for companies in a hurry.</p>
+      </div>
+      <nav class="footer__cols" aria-label="Footer">
+        <div><h4>Products</h4><a href="#products">Operating accounts</a><a href="#products">Accel Card</a><a href="#products">Treasury</a><a href="#products">Global Pay</a><a href="#products">Capital</a><a href="#pilot">Pilot</a></div>
+        <div><h4>Company</h4><a href="#advisory">Advisory</a><a href="#stories">Customers</a><a href="#top">Careers</a><a href="#top">Press</a></div>
+        <div><h4>Resources</h4><a href="#faq">Help center</a><a href="#security">Security</a><a href="#top">API docs</a><a href="#top">Status</a></div>
+      </nav>
+    </div>
+    <div class="footer__legal">
+      <p>Accel Financial Services is a financial technology company, not a bank. Banking services are provided by partner banks. *APY shown is illustrative, variable, and can change at any time. Treasury products are not bank deposits and are not FDIC-insured. Product names, rates, figures and customer stories on this site are illustrative.</p>
+      <p class="footer__copy"><span>© <span id="year">2026</span> Accel Financial Services, Inc.</span><span class="footer__links"><a href="#top">Privacy</a><a href="#top">Terms</a><a href="#top">Disclosures</a></span></p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
