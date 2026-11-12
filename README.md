@@ -1,9 +1,10 @@
 # Accel Financial — marketing site
 
-The landing page for **Accel Financial Services**, an AI-driven investment manager. Clients either
-give Accel their money to manage (**Accel Managed**), or connect Accel's AI trading strategies to
-their own brokerage account (**Accel AI Connect**). Institutions can license the models or a signal
-API. **Accel Pilot** explains every trade in plain English.
+The public site for **Accel Financial Services**, an AI trading firm that proves its strategies
+before taking outside money. The plan has four steps: trade only our own capital for 24 months
+in public, have the record independently verified, then open a private fund for accredited
+investors and license the signals to hedge funds. Every trading day's log is fingerprinted
+(SHA-256) and published at the close, so the record can't be cherry-picked later.
 
 Plain HTML, CSS and JavaScript. No build step, no dependencies.
 
@@ -11,8 +12,8 @@ Plain HTML, CSS and JavaScript. No build step, no dependencies.
 index.html          the landing page
 404.html            not-found page
 assets/styles.css   all styles (light + dark theme tokens at the top)
-assets/app.js       interactions: mobile menu, what-if calculator, Pilot chat replies,
-                    market and bot ticker, counters, email form
+assets/app.js       interactions: mobile menu, skill-vs-luck calculator, letter replies,
+                    daily log ticker, email form
 .github/workflows/pages.yml   deploys to GitHub Pages on every push
 ```
 
@@ -32,21 +33,20 @@ python3 -m http.server 8000
 
 ## Page sections
 
-Announcement bar · header · hero with AI strategy dashboard (strategy vs benchmark, bot activity) ·
-social proof · market and bot ticker · two paths (Managed vs AI Connect) · three AI strategies
-(Core, Momentum, Income) · what-if calculator (index vs index + edge − 1% fee) · Accel Pilot chat
-demo · 3-step onboarding · risk control · safety & stats · client stories · pricing (AI Connect
-$49/mo, Managed 1.0%/yr, Institutional) · FAQ · signup CTA · footer.
+Announcement bar · header · hero with public track record (day X of 730, own capital vs
+benchmark, daily log fingerprints) · log ticker · the 4-step plan · three proof rules (own capital,
+daily fingerprints, independent verification) · three strategies with benchmarks and loss limits ·
+skill-vs-luck calculator (confidence = Φ(Sharpe × √years)) · monthly letters · risk control ·
+commitments · FAQ · follow-along signup · footer.
 
 ## Before going live
 
-- **Performance claims.** Every return, back-test, statistic and client story is a placeholder.
-  Under the SEC Marketing Rule, an adviser may only advertise performance it can substantiate,
-  with standard periods and disclosures; hypothetical and back-tested results carry extra rules.
-  Do not publish "our bots beat the market" until you have an audited live track record.
-- **Compliance.** Investment advertising is regulated (SEC Marketing Rule, FINRA rules). Before
-  launch, a compliance reviewer must approve every performance figure, testimonial and claim,
-  and the footer disclosures must match the firm's real registrations.
+- **Sample data.** The day counter, chart, fingerprints, letter and figures are placeholders.
+  Wire them to the real daily log once trading starts, or keep the "Sample" labels.
+- **No offers.** While trading only your own capital, the site must not offer a fund or
+  investment. If you later raise a fund under Rule 506(c), have counsel review the site first.
+- **Fingerprints.** Publish each day's SHA-256 of the full trade log (and keep the log itself)
+  so the verifier can match them later.
 - **Signup form.** The email form validates and confirms in the browser only. To collect leads,
   point it at a form backend (Formspree, HubSpot, Basin, your own API) in `assets/app.js`.
 - **Links.** Log in, Careers, Press, Form CRS, Privacy, Terms and Disclosures currently

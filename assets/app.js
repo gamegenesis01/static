@@ -45,41 +45,30 @@
     setTimeout(function () { requestAnimationFrame(step); }, 500);
   }
 
-  /* Payment rail status ticker: open/closed computed from New York time */
+  /* Commitment log ticker: last 12 trading days (sample fingerprints) */
   var rails = $("#rails");
   if (rails) {
-    var nyParts = function () {
-      try {
-        var f = new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", weekday: "short", hour: "numeric", minute: "numeric", hour12: false });
-        var parts = {};
-        f.formatToParts(new Date()).forEach(function (p) { parts[p.type] = p.value; });
-        return { day: parts.weekday, mins: (parseInt(parts.hour, 10) % 24) * 60 + parseInt(parts.minute, 10) };
-      } catch (e) { return { day: "Mon", mins: 600 }; }
-    };
-    var ny = nyParts();
-    var weekday = ["Sat", "Sun"].indexOf(ny.day) === -1;
-    var marketOpen = weekday && ny.mins >= 9 * 60 + 30 && ny.mins < 16 * 60;
-    var items = [
-      { name: "NYSE", note: "9:30–16:00 ET", on: marketOpen },
-      { name: "Accel Core", note: "bot live · rebalances daily", on: true, label: "live" },
-      { fx: "S&P 500", rate: "6,012.40", chg: "+0.42%" },
-      { name: "Accel Momentum", note: "bot live · 9 markets", on: true, label: "live" },
-      { fx: "Nasdaq 100", rate: "21,184.6", chg: "+0.61%" },
-      { name: "Accel Income", note: "bot live · monthly payouts", on: true, label: "live" },
-      { fx: "10-yr Treasury", rate: "4.18%", chg: "+0.03" },
-      { fx: "VIX", rate: "16.4", chg: "−0.8" },
-      { fx: "Gold", rate: "$2,684", chg: "+0.35%" },
-      { fx: "EUR/USD", rate: "1.0842", chg: "+0.12%" },
-      { name: "Prices", note: "illustrative, not live", on: true, static: true }
-    ];
-    var html = items.map(function (i) {
-      if (i.fx) {
-        var up = i.chg.charAt(0) === "+";
-        return '<li><b>' + i.fx + '</b><span>' + i.rate + '</span><span class="' + (up ? "fx-up" : "") + '">' + i.chg + "</span></li>";
+    var hex = function (seed) {
+      var h = 2166136261 >>> 0, out = "";
+      for (var k = 0; k < seed.length; k++) { h ^= seed.charCodeAt(k); h = Math.imul(h, 16777619) >>> 0; }
+      for (var n = 0; n < 16; n++) {
+        h ^= h << 13; h >>>= 0; h ^= h >>> 17; h ^= h << 5; h >>>= 0;
+        out += (h & 15).toString(16);
       }
-      var pill = i.static ? "" : '<span class="pill ' + (i.on ? "pill--on" : "pill--off") + '">' + (i.label || (i.on ? "open" : "closed")) + "</span>";
-      return "<li><b>" + i.name + "</b>" + pill + "<span>" + i.note + "</span></li>";
-    }).join("");
+      return out;
+    };
+    var days = [], d = new Date();
+    while (days.length < 12) {
+      var wd = d.getDay();
+      if (wd !== 0 && wd !== 6) days.push(new Date(d));
+      d.setDate(d.getDate() - 1);
+    }
+    var fmt = function (x) { return x.toISOString().slice(0, 10); };
+    var html = days.map(function (x) {
+      var key = fmt(x), hsh = hex(key);
+      var trades = 150 + (parseInt(hsh.slice(0, 2), 16) % 90);
+      return "<li><b>" + key + "</b><span>sha256 " + hsh.slice(0, 4) + "…" + hsh.slice(-4) + '</span><span class="pill pill--on">locked</span><span>' + trades + " trades</span></li>";
+    }).join("") + '<li><b>Sample log</b><span>fingerprints shown for illustration</span></li>';
     rails.innerHTML = html;
     var clone = rails.cloneNode(true);
     clone.removeAttribute("id");
@@ -87,33 +76,36 @@
     rails.parentNode.appendChild(clone);
   }
 
-  /* What-if calculator: index at 7% a year vs index + edge - 1% fee */
-  var cash = $("#cash"), years = $("#years"), edge = $("#edge");
-  if (cash && years && edge) {
-    var INDEX = 0.07, FEE = 0.01;
+  /* Skill vs luck: one-sided confidence that true Sharpe > 0 after T years */
+  var sharpe = $("#sharpe"), years = $("#years");
+  if (sharpe && years) {
+    var erf = function (x) {
+      var s = x < 0 ? -1 : 1; x = Math.abs(x);
+      var t = 1 / (1 + 0.3275911 * x);
+      var y = 1 - (((((1.061405429 * t - 1.453152027) * t) + 1.421413741) * t - 0.284496736) * t + 0.254829592) * t * Math.exp(-x * x);
+      return s * y;
+    };
+    var phi = function (z) { return 0.5 * (1 + erf(z / Math.SQRT2)); };
     var fill = function (el) {
       var pct = ((el.value - el.min) / (el.max - el.min)) * 100;
       el.style.setProperty("--p", pct + "%");
     };
     var update = function () {
-      var v = parseFloat(cash.value), n = parseInt(years.value, 10), e = parseFloat(edge.value) / 100;
-      var idx = v * Math.pow(1 + INDEX, n);
-      var acc = v * Math.pow(1 + INDEX + e - FEE, n);
-      var diff = acc - idx;
-      $("#cashOut").textContent = usd(v);
-      $("#yearsOut").textContent = n;
-      $("#edgeOut").textContent = "+" + (e * 100).toFixed(1) + "%";
-      $("#bankOut").textContent = usd(Math.round(idx));
-      $("#accelOut").textContent = usd(Math.round(acc));
-      $("#diffLine").innerHTML = diff >= 0
-        ? 'Difference: <strong class="mono">' + usd(Math.round(diff)) + "</strong> more."
-        : 'The index fund wins by <strong class="mono">' + usd(Math.round(-diff)) + "</strong>. An edge must beat the fee.";
-      [cash, years, edge].forEach(fill);
-      cash.setAttribute("aria-valuetext", usd(v));
-      years.setAttribute("aria-valuetext", n + " years");
-      edge.setAttribute("aria-valuetext", (e * 100).toFixed(1) + " percent a year");
+      var s = parseFloat(sharpe.value), t = parseFloat(years.value);
+      var conf = phi(s * Math.sqrt(t));
+      var need = Math.pow(1.645 / s, 2);
+      $("#sharpeOut").textContent = s.toFixed(2);
+      $("#yearsOut").textContent = t.toFixed(1) + (t === 1 ? " year" : " years");
+      $("#confOut").textContent = (conf * 100).toFixed(conf > 0.995 ? 1 : 0) + "%";
+      $("#needOut").textContent = need < 1 ? Math.round(need * 12) + " months" : need.toFixed(1) + " yrs";
+      var bar = $("#confBar");
+      bar.style.width = (conf * 100) + "%";
+      bar.classList.toggle("is-ok", conf >= 0.95);
+      [sharpe, years].forEach(fill);
+      sharpe.setAttribute("aria-valuetext", "Sharpe " + s.toFixed(2));
+      years.setAttribute("aria-valuetext", t.toFixed(1) + " years");
     };
-    [cash, years, edge].forEach(function (el) { el.addEventListener("input", update); });
+    [sharpe, years].forEach(function (el) { el.addEventListener("input", update); });
     update();
   }
 
@@ -170,7 +162,7 @@
       var ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val);
       msg.className = "cta__msg " + (ok ? "is-ok" : "is-err");
       msg.textContent = ok
-        ? "Got it: " + val + ". Accounts open soon, and you will be first in line."
+        ? "You\u2019re on the list: " + val + ". The next monthly letter will land in your inbox."
         : "Enter an email like name@example.com to continue.";
       if (ok) input.value = "";
     });
