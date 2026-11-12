@@ -1,8 +1,9 @@
 # Accel Financial — marketing site
 
-The landing page for **Accel Financial Services**, an investing platform: automated portfolios,
-direct indexing with daily tax-loss harvesting, Treasuries, commission-free trading, private markets,
-fiduciary advice, and the Accel Pilot AI investing co-pilot.
+The landing page for **Accel Financial Services**, an AI-driven investment manager. Clients either
+give Accel their money to manage (**Accel Managed**), or connect Accel's AI trading strategies to
+their own brokerage account (**Accel AI Connect**). Institutions can license the models or a signal
+API. **Accel Pilot** explains every trade in plain English.
 
 Plain HTML, CSS and JavaScript. No build step, no dependencies.
 
@@ -10,8 +11,8 @@ Plain HTML, CSS and JavaScript. No build step, no dependencies.
 index.html          the landing page
 404.html            not-found page
 assets/styles.css   all styles (light + dark theme tokens at the top)
-assets/app.js       interactions: mobile menu, fee calculator, Pilot chat replies,
-                    market ticker, counters, email form
+assets/app.js       interactions: mobile menu, what-if calculator, Pilot chat replies,
+                    market and bot ticker, counters, email form
 .github/workflows/pages.yml   deploys to GitHub Pages on every push
 ```
 
@@ -31,16 +32,18 @@ python3 -m http.server 8000
 
 ## Page sections
 
-Announcement bar · header · hero with portfolio dashboard mockup · social proof · market ticker
-(NYSE/Nasdaq open or closed computed from New York time; prices are illustrative) · product bento
-(Portfolios, Direct, Treasuries, Trade, Private) · fee calculator (1.00% vs 0.25% over time) ·
-Accel Pilot AI chat demo · 3-step onboarding · Accel Advice services · security & stats ·
-investor stories · pricing · FAQ · signup CTA · footer.
+Announcement bar · header · hero with AI strategy dashboard (strategy vs benchmark, bot activity) ·
+social proof · market and bot ticker · two paths (Managed vs AI Connect) · three AI strategies
+(Core, Momentum, Income) · what-if calculator (index vs index + edge − 1% fee) · Accel Pilot chat
+demo · 3-step onboarding · risk control · safety & stats · client stories · pricing (AI Connect
+$49/mo, Managed 1.0%/yr, Institutional) · FAQ · signup CTA · footer.
 
 ## Before going live
 
-- **Placeholder content.** Product names, returns, yields, market prices, stats, logos and
-  testimonials are invented for this draft. Replace them with real, approved figures.
+- **Performance claims.** Every return, back-test, statistic and client story is a placeholder.
+  Under the SEC Marketing Rule, an adviser may only advertise performance it can substantiate,
+  with standard periods and disclosures; hypothetical and back-tested results carry extra rules.
+  Do not publish "our bots beat the market" until you have an audited live track record.
 - **Compliance.** Investment advertising is regulated (SEC Marketing Rule, FINRA rules). Before
   launch, a compliance reviewer must approve every performance figure, testimonial and claim,
   and the footer disclosures must match the firm's real registrations.

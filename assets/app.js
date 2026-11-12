@@ -61,23 +61,23 @@
     var marketOpen = weekday && ny.mins >= 9 * 60 + 30 && ny.mins < 16 * 60;
     var items = [
       { name: "NYSE", note: "9:30–16:00 ET", on: marketOpen },
-      { name: "Nasdaq", note: "9:30–16:00 ET", on: marketOpen },
+      { name: "Accel Core", note: "bot live · rebalances daily", on: true, label: "live" },
       { fx: "S&P 500", rate: "6,012.40", chg: "+0.42%" },
+      { name: "Accel Momentum", note: "bot live · 9 markets", on: true, label: "live" },
       { fx: "Nasdaq 100", rate: "21,184.6", chg: "+0.61%" },
-      { fx: "Dow", rate: "43,920.1", chg: "+0.18%" },
-      { fx: "Russell 2000", rate: "2,341.7", chg: "−0.27%" },
+      { name: "Accel Income", note: "bot live · monthly payouts", on: true, label: "live" },
       { fx: "10-yr Treasury", rate: "4.18%", chg: "+0.03" },
-      { fx: "13-wk T-bill", rate: "4.31%", chg: "+0.01" },
+      { fx: "VIX", rate: "16.4", chg: "−0.8" },
       { fx: "Gold", rate: "$2,684", chg: "+0.35%" },
       { fx: "EUR/USD", rate: "1.0842", chg: "+0.12%" },
-      { name: "Prices", note: "indicative, for illustration", on: true, static: true }
+      { name: "Prices", note: "illustrative, not live", on: true, static: true }
     ];
     var html = items.map(function (i) {
       if (i.fx) {
         var up = i.chg.charAt(0) === "+";
         return '<li><b>' + i.fx + '</b><span>' + i.rate + '</span><span class="' + (up ? "fx-up" : "") + '">' + i.chg + "</span></li>";
       }
-      var pill = i.static ? "" : '<span class="pill ' + (i.on ? "pill--on" : "pill--off") + '">' + (i.on ? "open" : "closed") + "</span>";
+      var pill = i.static ? "" : '<span class="pill ' + (i.on ? "pill--on" : "pill--off") + '">' + (i.label || (i.on ? "open" : "closed")) + "</span>";
       return "<li><b>" + i.name + "</b>" + pill + "<span>" + i.note + "</span></li>";
     }).join("");
     rails.innerHTML = html;
@@ -87,29 +87,33 @@
     rails.parentNode.appendChild(clone);
   }
 
-  /* Fee calculator: 7% gross return, 1.00% vs 0.25% yearly fee */
-  var cash = $("#cash"), years = $("#years");
-  if (cash && years) {
-    var GROSS = 0.07, ADVISOR = 0.01, ACCEL = 0.0025;
+  /* What-if calculator: index at 7% a year vs index + edge - 1% fee */
+  var cash = $("#cash"), years = $("#years"), edge = $("#edge");
+  if (cash && years && edge) {
+    var INDEX = 0.07, FEE = 0.01;
     var fill = function (el) {
       var pct = ((el.value - el.min) / (el.max - el.min)) * 100;
       el.style.setProperty("--p", pct + "%");
     };
     var update = function () {
-      var v = parseFloat(cash.value), n = parseInt(years.value, 10);
-      var adv = v * Math.pow(1 + GROSS - ADVISOR, n);
-      var acc = v * Math.pow(1 + GROSS - ACCEL, n);
+      var v = parseFloat(cash.value), n = parseInt(years.value, 10), e = parseFloat(edge.value) / 100;
+      var idx = v * Math.pow(1 + INDEX, n);
+      var acc = v * Math.pow(1 + INDEX + e - FEE, n);
+      var diff = acc - idx;
       $("#cashOut").textContent = usd(v);
       $("#yearsOut").textContent = n;
-      $("#bankOut").textContent = usd(Math.round(adv));
+      $("#edgeOut").textContent = "+" + (e * 100).toFixed(1) + "%";
+      $("#bankOut").textContent = usd(Math.round(idx));
       $("#accelOut").textContent = usd(Math.round(acc));
-      $("#diffOut").textContent = usd(Math.round(acc - adv));
-      fill(cash); fill(years);
+      $("#diffLine").innerHTML = diff >= 0
+        ? 'Difference: <strong class="mono">' + usd(Math.round(diff)) + "</strong> more."
+        : 'The index fund wins by <strong class="mono">' + usd(Math.round(-diff)) + "</strong>. An edge must beat the fee.";
+      [cash, years, edge].forEach(fill);
       cash.setAttribute("aria-valuetext", usd(v));
       years.setAttribute("aria-valuetext", n + " years");
+      edge.setAttribute("aria-valuetext", (e * 100).toFixed(1) + " percent a year");
     };
-    cash.addEventListener("input", update);
-    years.addEventListener("input", update);
+    [cash, years, edge].forEach(function (el) { el.addEventListener("input", update); });
     update();
   }
 
