@@ -58,20 +58,19 @@
     };
     var ny = nyParts();
     var weekday = ["Sat", "Sun"].indexOf(ny.day) === -1;
-    var within = function (a, b) { return weekday && ny.mins >= a && ny.mins < b; };
+    var marketOpen = weekday && ny.mins >= 9 * 60 + 30 && ny.mins < 16 * 60;
     var items = [
-      { name: "RTP", note: "24/7 instant", on: true },
-      { name: "FedNow", note: "24/7 instant", on: true },
-      { name: "Fedwire", note: "cut-off 18:00 ET", on: within(9 * 60, 18 * 60) },
-      { name: "Same-day ACH", note: "last window 16:45 ET", on: within(8 * 60, 16 * 60 + 45) },
-      { name: "SEPA Instant", note: "24/7 · EUR", on: true },
-      { name: "UK Faster Payments", note: "24/7 · GBP", on: true },
-      { name: "SWIFT", note: "138 corridors", on: weekday },
+      { name: "NYSE", note: "9:30–16:00 ET", on: marketOpen },
+      { name: "Nasdaq", note: "9:30–16:00 ET", on: marketOpen },
+      { fx: "S&P 500", rate: "6,012.40", chg: "+0.42%" },
+      { fx: "Nasdaq 100", rate: "21,184.6", chg: "+0.61%" },
+      { fx: "Dow", rate: "43,920.1", chg: "+0.18%" },
+      { fx: "Russell 2000", rate: "2,341.7", chg: "−0.27%" },
+      { fx: "10-yr Treasury", rate: "4.18%", chg: "+0.03" },
+      { fx: "13-wk T-bill", rate: "4.31%", chg: "+0.01" },
+      { fx: "Gold", rate: "$2,684", chg: "+0.35%" },
       { fx: "EUR/USD", rate: "1.0842", chg: "+0.12%" },
-      { fx: "GBP/USD", rate: "1.2718", chg: "+0.08%" },
-      { fx: "USD/JPY", rate: "151.36", chg: "−0.21%" },
-      { fx: "USD/INR", rate: "83.92", chg: "+0.03%" },
-      { name: "13-wk T-bill", note: "yield 4.31%", on: true, static: true }
+      { name: "Prices", note: "indicative, for illustration", on: true, static: true }
     ];
     var html = items.map(function (i) {
       if (i.fx) {
@@ -88,27 +87,29 @@
     rails.parentNode.appendChild(clone);
   }
 
-  /* Treasury calculator */
-  var cash = $("#cash");
-  if (cash) {
-    var BANK = 0.0045, ACCEL = 0.0412, HIRE = 165000;
-    var compact = function (n) {
-      if (n >= 1e6) return "$" + (n / 1e6).toFixed(n % 1e6 === 0 ? 0 : 1) + "M";
-      return usd(n);
+  /* Fee calculator: 7% gross return, 1.00% vs 0.25% yearly fee */
+  var cash = $("#cash"), years = $("#years");
+  if (cash && years) {
+    var GROSS = 0.07, ADVISOR = 0.01, ACCEL = 0.0025;
+    var fill = function (el) {
+      var pct = ((el.value - el.min) / (el.max - el.min)) * 100;
+      el.style.setProperty("--p", pct + "%");
     };
     var update = function () {
-      var v = parseFloat(cash.value);
-      var bank = v * BANK, accel = v * ACCEL, diff = accel - bank;
+      var v = parseFloat(cash.value), n = parseInt(years.value, 10);
+      var adv = v * Math.pow(1 + GROSS - ADVISOR, n);
+      var acc = v * Math.pow(1 + GROSS - ACCEL, n);
       $("#cashOut").textContent = usd(v);
-      $("#bankOut").textContent = usd(Math.round(bank));
-      $("#accelOut").textContent = usd(Math.round(accel));
-      $("#diffOut").textContent = usd(Math.round(diff));
-      $("#hireOut").textContent = (diff / HIRE).toFixed(1);
-      var pct = ((v - cash.min) / (cash.max - cash.min)) * 100;
-      cash.style.setProperty("--p", pct + "%");
-      cash.setAttribute("aria-valuetext", compact(v));
+      $("#yearsOut").textContent = n;
+      $("#bankOut").textContent = usd(Math.round(adv));
+      $("#accelOut").textContent = usd(Math.round(acc));
+      $("#diffOut").textContent = usd(Math.round(acc - adv));
+      fill(cash); fill(years);
+      cash.setAttribute("aria-valuetext", usd(v));
+      years.setAttribute("aria-valuetext", n + " years");
     };
     cash.addEventListener("input", update);
+    years.addEventListener("input", update);
     update();
   }
 
@@ -128,25 +129,6 @@
         reply.textContent = text.slice(0, i);
         if (i >= text.length) clearInterval(typer);
       }, 14);
-    });
-  });
-
-  /* Pricing toggle */
-  var priceEls = $$("[data-monthly]");
-  $$(".toggle__btn").forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      var period = btn.dataset.period;
-      $$(".toggle__btn").forEach(function (b) {
-        var on = b === btn;
-        b.classList.toggle("is-on", on);
-        b.setAttribute("aria-pressed", String(on));
-      });
-      priceEls.forEach(function (el) {
-        el.textContent = el.dataset[period];
-        el.classList.remove("price-flip");
-        void el.offsetWidth;
-        el.classList.add("price-flip");
-      });
     });
   });
 
@@ -184,8 +166,8 @@
       var ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val);
       msg.className = "cta__msg " + (ok ? "is-ok" : "is-err");
       msg.textContent = ok
-        ? "Got it: " + val + ". Online applications open soon, and you will be first in line."
-        : "Enter a work email like name@company.com to continue.";
+        ? "Got it: " + val + ". Accounts open soon, and you will be first in line."
+        : "Enter an email like name@example.com to continue.";
       if (ok) input.value = "";
     });
   }
