@@ -1,0 +1,209 @@
+<main id="main">
+
+<!-- Hero -->
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow load" style="--d:0">3 · Accel Signals · in development</p>
+      <h1 class="display load" style="--d:1">Signals, locked in <em>before the open.</em></h1>
+      <p class="lede load" style="--d:2">Accel Signals will license our strategies' daily signals to institutions. We're building it now: every trading day the engine fingerprints that day's signals before 9:30 am ET, so the signal record can be checked line by line when verification is done.</p>
+      <div class="hero__actions load" style="--d:3">
+        <a href="#start" class="btn btn--primary btn--lg">Get verification updates <span aria-hidden="true">→</span></a>
+        <a href="#how" class="btn btn--ghost btn--lg">How it will work</a>
+      </div>
+      <ul class="hero__proof load" style="--d:4">
+        <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3 3 7-7"/></svg>Engine built and tested</li>
+        <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3 3 7-7"/></svg>Fingerprints before every open</li>
+        <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3 3 7-7"/></svg>Not available until verified</li>
+      </ul>
+    </div>
+
+    <!-- Commitment panel -->
+    <div class="hero__visual load" style="--d:2" aria-label="Accel Signals daily commitment preview" role="img">
+      <div class="dash">
+        <div class="dash__top">
+          <div class="dash__dots"><i></i><i></i><i></i></div>
+          <span class="dash__url mono">signals · commitments.jsonl</span>
+        </div>
+        <div class="dash__body">
+          <div class="dash__head">
+            <div>
+              <p class="dash__label">Next commitment</p>
+              <p class="dash__balance mono">08:45 <span class="dash__of">ET · before the open</span></p>
+            </div>
+            <span class="dash__tag mono">Sample data</span>
+          </div>
+          <div class="hashbox hashbox--dark mono">
+            <span>trade_date 2026-11-18 · 2 strategies · 10 signals</span>
+            <b>sha256 2f07cdac…7822ede3b31</b>
+            <span>committed 08:45 ET · published · verify: match</span>
+          </div>
+          <ul class="tx tx--log tx--group">
+            <li><span class="tx__ic tx__ic--in">#</span><span class="tx__who">2026-11-17 · 08:44 ET<small class="mono">sha256 9c41…0b7e · 10 signals</small></span><span class="mono tx__amt up">Match</span></li>
+            <li><span class="tx__ic tx__ic--in">#</span><span class="tx__who">2026-11-16 · 08:46 ET<small class="mono">sha256 51ad…e2f9 · 10 signals</small></span><span class="mono tx__amt up">Match</span></li>
+            <li><span class="tx__ic tx__ic--out">!</span><span class="tx__who">Risk limits checked first<small>40% per position · 100% gross · no shorts</small></span><span class="mono tx__amt">Passed</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="float float--a">
+        <span class="float__dot"></span>
+        <div><strong>Committed pre-open</strong><span class="mono">can't be changed after 9:30</span></div>
+      </div>
+      <div class="float float--b">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.1-8 9-4.6-.9-8-4.5-8-9V6z"/></svg>
+        <div><strong>Tamper check</strong><span class="mono">one changed weight = mismatch</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How it will work -->
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">How it will work</p>
+      <h2 class="h2">Every morning: signals, a fingerprint, and nothing to take on trust.</h2>
+      <p class="sec-head__p">Licensees will receive the same file our engine fingerprints each morning. They can hash it themselves and compare it with the fingerprint we published before the open.</p>
+    </div>
+    <div class="bento">
+      <article class="card card--pine b-third">
+        <p class="card__kicker">By 9:00 am ET</p>
+        <h3 class="h3">Daily target weights</h3>
+        <p>For each licensed strategy, the target weight of every instrument for that day. Delivered as a file and by API.</p>
+      </article>
+      <article class="card card--paper b-third">
+        <p class="card__kicker">Before the open</p>
+        <div class="hashbox mono" aria-hidden="true">
+          <span>2026-11-18 08:45 ET</span>
+          <b>2f07cdac…7822ede3b31</b>
+          <span>10 signals · published</span>
+        </div>
+        <h3 class="h3">A public fingerprint</h3>
+        <p>The SHA-256 of that exact file, published before trading starts. A file changed later no longer matches.</p>
+      </article>
+      <article class="card card--mint b-third">
+        <p class="card__kicker">Monthly</p>
+        <h3 class="h3">Performance and risk report</h3>
+        <p>How the signals performed against their benchmarks, how much of each risk limit was used, and any planned model changes.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Progress -->
+<section class="section section--tight" id="progress">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Where we are</p>
+      <h2 class="h2">Built now. Offered only when proven.</h2>
+    </div>
+    <ol class="steps steps--4">
+      <li class="step step--now">
+        <span class="step__n mono">01 · Done</span>
+        <h3 class="h3">Engine built</h3>
+        <p>Generates signals, checks risk limits, writes a canonical file and logs its fingerprint. Refuses to run after the open.</p>
+        <span class="step__t mono">Nov 2026</span>
+      </li>
+      <li class="step step--now">
+        <span class="step__n mono">02 · Now</span>
+        <h3 class="h3">Signal record</h3>
+        <p>A fingerprint committed before every open, alongside Accel Trading's live record.</p>
+        <span class="step__t mono">Months 0–24</span>
+      </li>
+      <li class="step">
+        <span class="step__n mono">03</span>
+        <h3 class="h3">Verification</h3>
+        <p>An independent firm re-hashes the stored files and checks them against every published fingerprint.</p>
+        <span class="step__t mono">Months 12–26</span>
+      </li>
+      <li class="step">
+        <span class="step__n mono">04</span>
+        <h3 class="h3">Licensing opens</h3>
+        <p>Only after verification and the adviser setup. A free shadow pilot first, then paid licenses.</p>
+        <span class="step__t mono">From about month 27</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Rules -->
+<section class="section section--alt" id="rules">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Our rules</p>
+      <h2 class="h2">What licensees will be able to count on.</h2>
+    </div>
+    <div class="sec-grid">
+      <div class="sec-item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.1-8 9-4.6-.9-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
+        <h3>Same models as ours</h3>
+        <p>The signals licensees get are the ones Accel trades with its own money. No better version held back.</p>
+      </div>
+      <div class="sec-item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg>
+        <h3>Capacity is capped</h3>
+        <p>We sell only as much capacity as the strategies can carry without their own trades eroding returns.</p>
+      </div>
+      <div class="sec-item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4M12 16h.01"/></svg>
+        <h3>Changes announced first</h3>
+        <p>Any model change is announced at least 5 trading days before it trades, and starts a new record.</p>
+      </div>
+      <div class="sec-item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+        <h3>No offers before proof</h3>
+        <p>Nothing is offered or priced to anyone until the record is verified and our lawyers approve.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="wrap faq">
+    <div class="faq__head">
+      <p class="eyebrow">FAQ</p>
+      <h2 class="h2">Questions, answered.</h2>
+      <p>Allocators with research questions can reach us through the form below.</p>
+    </div>
+    <div class="faq__list">
+      <details open>
+        <summary>Can my firm license the signals now?</summary>
+        <p>No. Accel Signals is not available and nothing on this page is an offer. Licensing will only be considered after an independent firm verifies the record and our adviser setup is complete.</p>
+      </details>
+      <details>
+        <summary>Who will it be for?</summary>
+        <p>Institutions such as hedge funds, asset managers and family offices that want to add a systematic, verified return stream to their own portfolios.</p>
+      </details>
+      <details>
+        <summary>Why fingerprint signals before the open?</summary>
+        <p>A signal published after the market moves proves nothing. A fingerprint published before the open proves the signal existed in exactly that form, so the record can't be cherry-picked later.</p>
+      </details>
+      <details>
+        <summary>Will you publish the signals themselves?</summary>
+        <p>Not in real time. The public sees fingerprints daily; the stored files go to the independent verifier, and later to licensees under contract.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="start">
+  <div class="wrap">
+    <div class="cta__box">
+      <div class="cta__lines" aria-hidden="true"></div>
+      <div class="cta__copy">
+        <h2 class="display display--cta">Hear when it's <em>verified.</em></h2>
+        <p>One email when the independent check is published, plus the monthly letter. This is a notification list, not an offer.</p>
+      </div>
+      <form class="cta__form" id="ctaForm" data-ok="You're on the list: {email}. We'll email you when the verification report is published." novalidate>
+        <label for="email" class="sr-only">Work email</label>
+        <input id="email" name="email" type="email" placeholder="you@firm.com" autocomplete="email" required>
+        <button class="btn btn--signal" type="submit">Notify me</button>
+        <p class="cta__msg" id="ctaMsg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>

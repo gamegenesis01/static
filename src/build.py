@@ -16,7 +16,8 @@ MARK = ('<svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><rect w
         'class="mark-bg"/><path d="M9 23 16 9l7 14" class="mark-a"/><path d="M12.6 18h6.8" class="mark-bar"/></svg>')
 
 BUSINESSES = [("trading", "trading.html", "1 · Trading"),
-              ("research", "research.html", "2 · Research")]
+              ("research", "research.html", "2 · Research"),
+              ("signals", "signals.html", "3 · Signals")]
 
 PAGES = {
     "index": dict(
@@ -33,6 +34,13 @@ PAGES = {
         nav=[("#plan", "The plan"), ("#proof", "How we prove it"), ("#strategies", "Strategies"),
              ("#letters", "Letters"), ("#faq", "FAQ")],
         cta=("#start", "Follow the record")),
+    "signals": dict(
+        file="signals.html", title="Accel Signals", sub="Signals",
+        desc="Accel Signals is in development: daily strategy signals fingerprinted before every market open, "
+             "to be licensed to institutions only after independent verification. Not an offer.",
+        nav=[("#how", "How it will work"), ("#progress", "Where we are"), ("#rules", "Our rules"),
+             ("#faq", "FAQ")],
+        cta=("#start", "Get updates")),
     "research": dict(
         file="research.html", title="Accel Research", sub="Research",
         desc="Accel Research publishes the monthly letter and weekly lab notes of an AI trading firm: "
@@ -44,8 +52,8 @@ PAGES = {
 
 FOOTER_LEGAL = (
     "Accel Financial is a group of separate businesses. Accel Trading trades only its own capital and does not "
-    "manage money for others. Accel Signals and Accel Fund do not yet exist and will only be considered after an "
-    "independent firm verifies the trading record. Accel Research publishes general "
+    "manage money for others. Accel Signals is in development and is not available to anyone; Accel Fund does not "
+    "exist. Both will only be considered after an independent firm verifies the trading record. Accel Research publishes general "
     "information about methods and results, not personalized advice or recommendations to buy or sell any "
     "security. Nothing on this site is an offer to sell, or a solicitation of an offer to buy, any security or "
     "fund. Trading involves substantial risk of loss, and past results do not guarantee future results. "
@@ -61,7 +69,7 @@ def groupbar(current):
     return (f'<div class="announce groupbar">\n  <div class="wrap groupbar__in">\n'
             f'    <a href="index.html" class="groupbar__home"{home_cur}>Accel Financial</a>\n'
             f'    <nav class="groupbar__links" aria-label="Accel businesses">{"".join(links)}'
-            f'<a href="index.html#later" class="groupbar__soon">3 · Signals &amp; 4 · Fund: after verification</a></nav>\n'
+            f'<a href="index.html#later" class="groupbar__soon">4 · Fund: after verification</a></nav>\n'
             f'  </div>\n</div>')
 
 
@@ -102,7 +110,7 @@ def footer():
         <p>One research engine. Four businesses.</p>
       </div>
       <nav class="footer__cols" aria-label="Footer">
-        <div><h4>Businesses</h4><a href="trading.html">1 · Accel Trading</a><a href="research.html">2 · Accel Research</a><a href="index.html#later">3 · Accel Signals</a><a href="index.html#later">4 · Accel Fund</a></div>
+        <div><h4>Businesses</h4><a href="trading.html">1 · Accel Trading</a><a href="research.html">2 · Accel Research</a><a href="signals.html">3 · Accel Signals</a><a href="index.html#later">4 · Accel Fund</a></div>
         <div><h4>Read</h4><a href="research.html">Monthly letter</a><a href="trading.html#plan">The 4-step plan</a><a href="trading.html#calculator">Skill or luck?</a></div>
         <div><h4>Group</h4><a href="index.html#rules">Group rules</a><a href="index.html#faq">FAQ</a><a href="index.html#start">Contact</a></div>
       </nav>

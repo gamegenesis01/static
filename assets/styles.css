@@ -439,6 +439,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .big-rate--onpine .mono { color: var(--signal); }
 .big-rate--onpine small { color: var(--pine-mute); }
 .hashbox { display: grid; gap: 4px; padding: 14px 16px; border-radius: 14px; background: var(--paper); border: 1px dashed var(--line); font-size: .74rem; color: var(--ink-2); margin-block: 4px 6px; overflow-wrap: anywhere; }
+.hashbox--dark { background: color-mix(in srgb, var(--pine-ink) 7%, transparent); border-color: color-mix(in srgb, var(--pine-ink) 22%, transparent); color: var(--pine-mute); margin: 0; }
+.hashbox.hashbox--dark b { color: var(--pine-ink); }
 .hashbox b { font-weight: 500; font-size: 1rem; color: var(--ink); letter-spacing: .02em; }
 
 /* Strategy cards */

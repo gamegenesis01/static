@@ -5,7 +5,8 @@ The website for **Accel Financial**, a group of four businesses built around one
 1. **Accel Trading** (live): AI strategies trading only the founders' capital for 24 months, with a
    daily trade-log fingerprint and independent verification. Page: `trading.html`.
 2. **Accel Research** (live): free monthly letter and paid weekly lab notes. Page: `research.html`.
-3. **Accel Signals** (gated): signal licensing to institutions, only after verification.
+3. **Accel Signals** (in development): the signal engine in `signals/` fingerprints each day's
+   signals before the open. Licensing to institutions opens only after verification. Page: `signals.html`.
 4. **Accel Fund** (gated): a private fund, only after verification.
 
 `index.html` is the group home page.
@@ -16,6 +17,8 @@ Plain HTML, CSS and JavaScript. No build step, no dependencies.
 index.html          group home page (built)
 trading.html        1 · Accel Trading (built)
 research.html       2 · Accel Research (built)
+signals.html        3 · Accel Signals (built)
+signals/            the Accel Signals engine (Python, stdlib only); see signals/README.md
 404.html            not-found page
 src/build.py        builds the three pages from src/*.body.html with a shared head,
                     group switcher, header and footer
