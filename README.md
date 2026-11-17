@@ -1,19 +1,27 @@
 # Accel Financial — marketing site
 
-The public site for **Accel Financial Services**, an AI trading firm that proves its strategies
-before taking outside money. The plan has four steps: trade only our own capital for 24 months
-in public, have the record independently verified, then open a private fund for accredited
-investors and license the signals to hedge funds. Every trading day's log is fingerprinted
-(SHA-256) and published at the close, so the record can't be cherry-picked later.
+The website for **Accel Financial**, a group of four businesses built around one AI research engine:
+
+1. **Accel Trading** (live): AI strategies trading only the founders' capital for 24 months, with a
+   daily trade-log fingerprint and independent verification. Page: `trading.html`.
+2. **Accel Research** (live): free monthly letter and paid weekly lab notes. Page: `research.html`.
+3. **Accel Signals** (gated): signal licensing to institutions, only after verification.
+4. **Accel Fund** (gated): a private fund, only after verification.
+
+`index.html` is the group home page.
 
 Plain HTML, CSS and JavaScript. No build step, no dependencies.
 
 ```
-index.html          the landing page
+index.html          group home page (built)
+trading.html        1 · Accel Trading (built)
+research.html       2 · Accel Research (built)
 404.html            not-found page
+src/build.py        builds the three pages from src/*.body.html with a shared head,
+                    group switcher, header and footer
+src/*.body.html     the page contents; edit these, then run: python3 src/build.py
 assets/styles.css   all styles (light + dark theme tokens at the top)
-assets/app.js       interactions: mobile menu, skill-vs-luck calculator, letter replies,
-                    daily log ticker, email form
+assets/app.js       interactions shared by every page
 .github/workflows/pages.yml   deploys to GitHub Pages on every push
 ```
 
@@ -30,14 +38,6 @@ python3 -m http.server 8000
 1. Repo **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 2. Push to `main` (or re-run the "Deploy site to GitHub Pages" workflow).
 3. The site goes live at `https://<owner>.github.io/<repo>/`.
-
-## Page sections
-
-Announcement bar · header · hero with public track record (day X of 730, own capital vs
-benchmark, daily log fingerprints) · log ticker · the 4-step plan · three proof rules (own capital,
-daily fingerprints, independent verification) · three strategies with benchmarks and loss limits ·
-skill-vs-luck calculator (confidence = Φ(Sharpe × √years)) · monthly letters · risk control ·
-commitments · FAQ · follow-along signup · footer.
 
 ## Before going live
 

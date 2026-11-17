@@ -161,8 +161,9 @@
       var val = input.value.trim();
       var ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val);
       msg.className = "cta__msg " + (ok ? "is-ok" : "is-err");
+      var okText = form.getAttribute("data-ok") || "You\u2019re on the list: {email}.";
       msg.textContent = ok
-        ? "You\u2019re on the list: " + val + ". The next monthly letter will land in your inbox."
+        ? okText.replace("{email}", val)
         : "Enter an email like name@example.com to continue.";
       if (ok) input.value = "";
     });

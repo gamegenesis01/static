@@ -1,0 +1,373 @@
+<main id="main">
+
+<!-- Hero -->
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow load" style="--d:0">1 · Accel Trading · own capital · verified in public</p>
+      <h1 class="display load" style="--d:1">Proof, <em>not promises.</em></h1>
+      <p class="lede load" style="--d:2">Accel builds AI trading strategies. Before we manage a single dollar of anyone else's money, our bots trade our own capital for 24 months, in public, with every trading day locked into a tamper-evident log and checked by an independent firm.</p>
+      <div class="hero__actions load" style="--d:3">
+        <a href="#start" class="btn btn--primary btn--lg">Follow the track record <span aria-hidden="true">→</span></a>
+        <a href="#plan" class="btn btn--ghost btn--lg">See the 4-step plan</a>
+      </div>
+      <ul class="hero__proof load" style="--d:4">
+        <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3 3 7-7"/></svg>100% our own money</li>
+        <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3 3 7-7"/></svg>Every day's log published</li>
+        <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3 3 7-7"/></svg>Independent verification</li>
+      </ul>
+    </div>
+
+    <!-- Track record mockup -->
+    <div class="hero__visual load" style="--d:2" aria-label="Accel public track record preview" role="img">
+      <div class="dash">
+        <div class="dash__top">
+          <div class="dash__dots"><i></i><i></i><i></i></div>
+          <span class="dash__url mono">accel.finance/record</span>
+        </div>
+        <div class="dash__body">
+          <div class="dash__head">
+            <div>
+              <p class="dash__label">Public track record · day</p>
+              <p class="dash__balance mono"><span id="dayNum">41</span><span class="dash__of"> of 730</span></p>
+            </div>
+            <span class="dash__tag mono">Sample data</span>
+          </div>
+          <div class="prog" aria-hidden="true"><i id="dayBar" style="width:5.6%"></i></div>
+          <svg class="dash__chart" viewBox="0 0 600 180" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="g-area" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stop-color="#FF5B23" stop-opacity=".32"/>
+                <stop offset="1" stop-color="#FF5B23" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <g class="dash__grid"><path d="M0 45H600M0 90H600M0 135H600"/></g>
+            <path class="dash__area" d="M0.0 123.4 C15.8 123.4 15.8 118.1 31.6 118.1 C47.4 118.1 47.4 120.8 63.2 120.8 C78.9 120.8 78.9 112.7 94.7 112.7 C110.5 112.7 110.5 109.6 126.3 109.6 C142.1 109.6 142.1 113.6 157.9 113.6 C173.7 113.6 173.7 102.9 189.5 102.9 C205.3 102.9 205.3 96.7 221.1 96.7 C236.8 96.7 236.8 100.7 252.6 100.7 C268.4 100.7 268.4 88.7 284.2 88.7 C300.0 88.7 300.0 82.4 315.8 82.4 C331.6 82.4 331.6 86.0 347.4 86.0 C363.2 86.0 363.2 74.8 378.9 74.8 C394.7 74.8 394.7 67.3 410.5 67.3 C426.3 67.3 426.3 70.8 442.1 70.8 C457.9 70.8 457.9 61.5 473.7 61.5 C489.5 61.5 489.5 55.7 505.3 55.7 C521.1 55.7 521.1 58.4 536.8 58.4 C552.6 58.4 552.6 48.1 568.4 48.1 C584.2 48.1 584.2 40.1 600.0 40.1 L600 180 L0 180Z" fill="url(#g-area)"/>
+            <path class="dash__bline" d="M0.0 123.4 C15.8 123.4 15.8 119.9 31.6 119.9 C47.4 119.9 47.4 125.2 63.2 125.2 C78.9 125.2 78.9 119.0 94.7 119.0 C110.5 119.0 110.5 117.2 126.3 117.2 C142.1 117.2 142.1 123.9 157.9 123.9 C173.7 123.9 173.7 115.4 189.5 115.4 C205.3 115.4 205.3 111.8 221.1 111.8 C236.8 111.8 236.8 118.1 252.6 118.1 C268.4 118.1 268.4 110.1 284.2 110.1 C300.0 110.1 300.0 106.0 315.8 106.0 C331.6 106.0 331.6 112.7 347.4 112.7 C363.2 112.7 363.2 102.9 378.9 102.9 C394.7 102.9 394.7 98.9 410.5 98.9 C426.3 98.9 426.3 105.2 442.1 105.2 C457.9 105.2 457.9 96.7 473.7 96.7 C489.5 96.7 489.5 90.9 505.3 90.9 C521.1 90.9 521.1 95.8 536.8 95.8 C552.6 95.8 552.6 83.8 568.4 83.8 C584.2 83.8 584.2 73.5 600.0 73.5"/>
+            <path class="dash__line" pathLength="1" d="M0.0 123.4 C15.8 123.4 15.8 118.1 31.6 118.1 C47.4 118.1 47.4 120.8 63.2 120.8 C78.9 120.8 78.9 112.7 94.7 112.7 C110.5 112.7 110.5 109.6 126.3 109.6 C142.1 109.6 142.1 113.6 157.9 113.6 C173.7 113.6 173.7 102.9 189.5 102.9 C205.3 102.9 205.3 96.7 221.1 96.7 C236.8 96.7 236.8 100.7 252.6 100.7 C268.4 100.7 268.4 88.7 284.2 88.7 C300.0 88.7 300.0 82.4 315.8 82.4 C331.6 82.4 331.6 86.0 347.4 86.0 C363.2 86.0 363.2 74.8 378.9 74.8 C394.7 74.8 394.7 67.3 410.5 67.3 C426.3 67.3 426.3 70.8 442.1 70.8 C457.9 70.8 457.9 61.5 473.7 61.5 C489.5 61.5 489.5 55.7 505.3 55.7 C521.1 55.7 521.1 58.4 536.8 58.4 C552.6 58.4 552.6 48.1 568.4 48.1 C584.2 48.1 584.2 40.1 600.0 40.1"/>
+          </svg>
+          <ul class="dash__legend mono" aria-hidden="true">
+            <li><b class="lg-strat"></b>Accel Core, own capital</li>
+            <li><b class="lg-bench"></b>Global stock index</li>
+          </ul>
+          <p class="dash__label dash__label--sec">Daily log commitments</p>
+          <ul class="tx tx--log">
+            <li><span class="tx__ic tx__ic--in">#</span><span class="tx__who">Today, 16:05 ET<small class="mono">sha256 9f3a…c21e · 214 trades</small></span><span class="mono tx__amt up">Locked</span></li>
+            <li><span class="tx__ic tx__ic--in">#</span><span class="tx__who">Yesterday, 16:05 ET<small class="mono">sha256 41bd…07fa · 188 trades</small></span><span class="mono tx__amt up">Locked</span></li>
+            <li><span class="tx__ic tx__ic--out">✓</span><span class="tx__who">Month 1 handed to verifier<small>Logs matched to broker statements</small></span><span class="mono tx__amt">Checked</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="float float--a">
+        <span class="float__dot"></span>
+        <div><strong>Today's log locked</strong><span class="mono">Published before results</span></div>
+      </div>
+      <div class="float float--b">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.1-8 9-4.6-.9-8-4.5-8-9V6z"/></svg>
+        <div><strong>Risk check passed</strong><span class="mono">Drawdown 3.4% of 12% limit</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Commitment log ticker -->
+<section class="rails" aria-label="Recent daily log commitments">
+  <div class="rails__track">
+    <ul class="rails__list" id="rails"></ul>
+  </div>
+</section>
+
+<!-- The plan -->
+<section class="section" id="plan">
+  <div class="wrap">
+    <div class="sec-head sec-head--row">
+      <div>
+        <p class="eyebrow">The plan</p>
+        <h2 class="h2">Four steps, and we don't skip any.</h2>
+        <p class="sec-head__p">Most trading firms ask for your money first and show results later. We're doing it in the opposite order. Each step only starts when the one before it is finished.</p>
+      </div>
+    </div>
+    <ol class="steps steps--4">
+      <li class="step step--now">
+        <span class="step__n mono">01 · Now</span>
+        <h3 class="h3">Prove</h3>
+        <p>Our bots trade our own capital for 24 months. Every day's trades are locked into a public log before results are known.</p>
+        <span class="step__t mono">Months 0–24</span>
+      </li>
+      <li class="step">
+        <span class="step__n mono">02</span>
+        <h3 class="h3">Verify</h3>
+        <p>An independent firm checks our logs against broker statements and calculates returns to industry standards.</p>
+        <span class="step__t mono">Months 12–26</span>
+      </li>
+      <li class="step">
+        <span class="step__n mono">03</span>
+        <h3 class="h3">Open a fund</h3>
+        <p>Only if the verified results hold up: a private fund for accredited investors, with the founders' own money still in it.</p>
+        <span class="step__t mono">After verification</span>
+      </li>
+      <li class="step">
+        <span class="step__n mono">04</span>
+        <h3 class="h3">License the signals</h3>
+        <p>Hedge funds and asset managers can license our signals to run in their own portfolios.</p>
+        <span class="step__t mono">After verification</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- How we prove it -->
+<section class="section section--tight" id="proof">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">How we prove it</p>
+      <h2 class="h2">Three rules that make cherry-picking impossible.</h2>
+      <p class="sec-head__p">Anyone can show a great chart. The hard part is proving it wasn't picked after the fact. Here is how we make our record hard to fake.</p>
+    </div>
+    <div class="bento">
+      <article class="card card--pine b-third">
+        <p class="card__kicker">Rule 1</p>
+        <p class="big-rate big-rate--onpine"><span class="mono">100%</span><small>own capital</small></p>
+        <h3 class="h3">Our money, at risk first</h3>
+        <p>Every trade in the record is made with the founders' own money at a regular brokerage. Paper trading and back-tests don't count toward the record.</p>
+      </article>
+      <article class="card card--paper b-third">
+        <p class="card__kicker">Rule 2</p>
+        <div class="hashbox mono" aria-hidden="true">
+          <span>2026-11-12 16:05 ET</span>
+          <b>9f3a71c0…e84bc21e</b>
+          <span>214 trades · published</span>
+        </div>
+        <h3 class="h3">Every day locked in</h3>
+        <p>At each close we publish a fingerprint (a SHA-256 hash) of that day's full trade log. Change a single trade later and the fingerprint no longer matches.</p>
+      </article>
+      <article class="card card--mint b-third">
+        <p class="card__kicker">Rule 3</p>
+        <p class="big-rate"><span class="mono">3rd</span><small>party checks</small></p>
+        <h3 class="h3">Someone else does the maths</h3>
+        <p>An independent firm matches our logs to broker statements and calculates returns. We publish their report, good or bad.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Strategies -->
+<section class="section" id="strategies">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">What we're testing</p>
+      <h2 class="h2">Three strategies, each with a benchmark it must beat.</h2>
+      <p class="sec-head__p">Each strategy is judged against a named benchmark and a fixed loss limit, written down before day one. If one fails, we say so and shut it off.</p>
+    </div>
+    <div class="strats">
+      <article class="strat">
+        <div class="strat__top"><h3 class="h3">Accel Core</h3><span class="pill pill--on">Live</span></div>
+        <p>AI model that reads earnings, prices and news across 4,000 companies and tilts toward the strongest. Rebalances daily.</p>
+        <dl class="specs">
+          <div><dt>Benchmark</dt><dd>Global stock index</dd></div>
+          <div><dt>Loss limit</dt><dd class="mono">−12%</dd></div>
+          <div><dt>Capital</dt><dd class="mono">50% of book</dd></div>
+        </dl>
+      </article>
+      <article class="strat">
+        <div class="strat__top"><h3 class="h3">Accel Momentum</h3><span class="pill pill--on">Live</span></div>
+        <p>Follows trends in stocks, bonds, gold and currencies through futures, and moves to cash when markets break down.</p>
+        <dl class="specs">
+          <div><dt>Benchmark</dt><dd>Cash + 5%</dd></div>
+          <div><dt>Loss limit</dt><dd class="mono">−15%</dd></div>
+          <div><dt>Capital</dt><dd class="mono">30% of book</dd></div>
+        </dl>
+      </article>
+      <article class="strat">
+        <div class="strat__top"><h3 class="h3">Accel Income</h3><span class="pill pill--off">Paper only</span></div>
+        <p>Picks dividend stocks and bonds the model rates most likely to keep paying. Joins the live record once it passes 6 months on paper.</p>
+        <dl class="specs">
+          <div><dt>Benchmark</dt><dd>60/40 income index</dd></div>
+          <div><dt>Loss limit</dt><dd class="mono">−8%</dd></div>
+          <div><dt>Capital</dt><dd class="mono">20% of book</dd></div>
+        </dl>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Skill vs luck calculator -->
+<section class="section section--tight" id="calculator">
+  <div class="wrap">
+    <div class="calc">
+      <div class="calc__copy">
+        <p class="eyebrow">Skill or luck?</p>
+        <h2 class="h2">Why we won't take your money after six good months.</h2>
+        <p>A lucky streak looks a lot like skill. The bigger a strategy's real edge, the sooner the difference shows. Move the sliders to see how much confidence a track record buys.</p>
+      </div>
+      <div class="calc__panel">
+        <label for="sharpe" class="calc__label">Edge, as a Sharpe ratio: <strong class="mono" id="sharpeOut">1.00</strong></label>
+        <input type="range" id="sharpe" min="0.25" max="2.5" step="0.05" value="1">
+        <div class="calc__scale mono" aria-hidden="true"><span>0.25 · thin</span><span>2.5 · rare</span></div>
+        <label for="years" class="calc__label calc__label--gap">Length of live record: <strong class="mono" id="yearsOut">2.0 years</strong></label>
+        <input type="range" id="years" min="0.5" max="5" step="0.5" value="2">
+        <div class="calc__scale mono" aria-hidden="true"><span>6 months</span><span>5 years</span></div>
+        <div class="calc__results">
+          <div class="calc__res">
+            <span>Confidence it's skill, not luck</span>
+            <strong class="mono" id="confOut">92%</strong>
+          </div>
+          <div class="calc__res calc__res--accel">
+            <span>Years needed for 95%</span>
+            <strong class="mono" id="needOut">2.7 yrs</strong>
+          </div>
+        </div>
+        <div class="meter" aria-hidden="true"><i id="confBar" style="width:92%"></i><b style="left:95%"></b></div>
+        <p class="calc__fine">One-sided test that the true Sharpe ratio is above zero, assuming normally distributed returns. A simplification, but it's the right order of magnitude. A Sharpe of 1 is good; above 2 is rare.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Building in public -->
+<section class="pilot" id="letters">
+  <div class="wrap pilot__grid">
+    <div class="pilot__copy">
+      <p class="eyebrow eyebrow--onpine">Monthly letters · building in public</p>
+      <h2 class="h2">Every month, the full story. Including the bad parts.</h2>
+      <p>On the first business day of each month we publish a letter: returns against benchmark, the biggest wins and losses, every risk limit we came close to, and what we changed in the models and why.</p>
+      <ul class="pilot__list">
+        <li><strong>Same day, every month</strong><span>No skipping a bad month. A missing letter would tell you everything.</span></li>
+        <li><strong>Mistakes first</strong><span>Each letter opens with what went wrong before what went right.</span></li>
+        <li><strong>Model changes logged</strong><span>Any change to a strategy is announced before it trades, never after.</span></li>
+      </ul>
+    </div>
+
+    <div class="chat letter" aria-label="Sample monthly letter">
+      <div class="chat__head">
+        <span class="chat__avatar" aria-hidden="true">
+          <svg viewBox="0 0 32 32"><path d="M9 23 16 9l7 14" class="mark-a"/><path d="M12.6 18h6.8" class="mark-bar"/></svg>
+        </span>
+        <div><strong>Letter No. 1 · October</strong><span>Sample layout · numbers are placeholders</span></div>
+      </div>
+      <div class="chat__msg chat__msg--ai letter__body">
+        <p><strong>What went wrong.</strong> The Momentum bot bought gold futures two days before a sharp reversal and hit 71% of its monthly loss limit. The risk guard cut the position as designed.</p>
+        <ol class="chat__bars">
+          <li><span>Accel Core</span><span class="mono">+2.1% vs +1.4%</span><i style="--w:100%"></i></li>
+          <li><span>Accel Momentum</span><span class="mono">−0.8% vs +0.4%</span><i style="--w:38%"></i></li>
+          <li><span>Total book</span><span class="mono">+1.0% vs +1.0%</span><i style="--w:62%"></i></li>
+        </ol>
+        <p><strong>What we changed.</strong> Nothing in the models. One month is noise. We'll review Momentum's entry rules at month 6, as planned.</p>
+      </div>
+      <div class="chat__chips">
+        <button type="button" class="chip" data-reply="Next letter: first business day of next month, 8:00 am ET, with the verifier's month-1 sign-off attached.">When is the next letter?</button>
+        <a href="research.html" class="chip chip--link">Read the letters at Accel Research →</a>
+        <button type="button" class="chip" data-reply="The 31 daily fingerprints for October, the broker statement totals, and a link to download the full trade log once the verifier has checked it.">What's in the appendix?</button>
+      </div>
+      <div class="chat__reply" id="chatReply" hidden></div>
+    </div>
+  </div>
+</section>
+
+<!-- Risk control -->
+<section class="section section--alt" id="risk">
+  <div class="wrap advisory">
+    <div class="advisory__head">
+      <p class="eyebrow">Risk control</p>
+      <h2 class="h2">Machines make the trades. Humans hold the keys.</h2>
+      <p>An edge only matters if you survive long enough to use it. Every strategy runs inside limits we wrote down before day one, and published.</p>
+    </div>
+    <div class="advisory__list">
+      <article class="svc">
+        <div class="svc__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 8.1-8 9-4.6-.9-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div>
+        <div>
+          <h3 class="h3">Pre-trade limits</h3>
+          <p>Position size, sector exposure and leverage are checked before every order. If a check fails, the order isn't sent.</p>
+        </div>
+        <span class="svc__price mono">every order</span>
+      </article>
+      <article class="svc">
+        <div class="svc__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4M12 16h.01"/></svg></div>
+        <div>
+          <h3 class="h3">Hard stops</h3>
+          <p>If a strategy hits its loss limit, it goes to cash automatically and stays there until we've written up what happened.</p>
+        </div>
+        <span class="svc__price mono">automatic</span>
+      </article>
+      <article class="svc">
+        <div class="svc__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1.2-3.6 3.9-5.5 7-5.5s5.8 1.9 7 5.5"/></svg></div>
+        <div>
+          <h3 class="h3">No silent changes</h3>
+          <p>Model changes are announced in advance. A strategy that's been changed is tracked as a new strategy, with its own record.</p>
+        </div>
+        <span class="svc__price mono">published</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Commitments -->
+<section class="section" id="commitments">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Our commitments</p>
+      <h2 class="h2">The numbers we hold ourselves to.</h2>
+    </div>
+    <div class="stats">
+      <div class="stat"><span class="stat__n mono">730</span><span class="stat__l">days of live trading before any outside money</span></div>
+      <div class="stat"><span class="stat__n mono">$0</span><span class="stat__l">of outside capital until results are verified</span></div>
+      <div class="stat"><span class="stat__n mono">1 / day</span><span class="stat__l">log fingerprint, published at every close</span></div>
+      <div class="stat"><span class="stat__n mono">12</span><span class="stat__l">monthly letters a year, good months and bad</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--alt" id="faq">
+  <div class="wrap faq">
+    <div class="faq__head">
+      <p class="eyebrow">FAQ</p>
+      <h2 class="h2">Questions, answered.</h2>
+      <p>Something we haven't covered? Ask, and we'll answer it in the next letter.</p>
+    </div>
+    <div class="faq__list">
+      <details open>
+        <summary>Can I invest with Accel now?</summary>
+        <p>No. We are not accepting outside money and nothing on this site is an offer to sell securities. We'll only consider a fund after an independent firm has verified our live record.</p>
+      </details>
+      <details>
+        <summary>Why should I believe your results?</summary>
+        <p>You shouldn't have to take our word for it. Each day's trade log is fingerprinted and published before results are known, our own money is at risk, and an independent firm checks the numbers against broker statements.</p>
+      </details>
+      <details>
+        <summary>What if the bots lose money?</summary>
+        <p>Then you'll read about it in that month's letter. Every strategy has a published loss limit. If a strategy fails over the full period, we'll say so plainly and won't launch it.</p>
+      </details>
+      <details>
+        <summary>Why not show back-tests instead?</summary>
+        <p>Back-tests are built with hindsight and almost always look better than live trading. We use them to research ideas, never as proof.</p>
+      </details>
+      <details>
+        <summary>I run a fund. Can we license the signals?</summary>
+        <p>We'll start those conversations once 12 months of the record are verified. Leave your details below and mention your firm.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="start">
+  <div class="wrap">
+    <div class="cta__box">
+      <div class="cta__lines" aria-hidden="true"></div>
+      <div class="cta__copy">
+        <h2 class="display display--cta">Watch us <em>prove it.</em></h2>
+        <p>Get the monthly letter and the verifier's reports by email. Free, and you can unsubscribe anytime.</p>
+      </div>
+      <form class="cta__form" id="ctaForm" data-ok="You're on the list: {email}. The next monthly letter will land in your inbox." novalidate>
+        <label for="email" class="sr-only">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@email.com" autocomplete="email" required>
+        <button class="btn btn--signal" type="submit">Follow along</button>
+        <p class="cta__msg" id="ctaMsg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
