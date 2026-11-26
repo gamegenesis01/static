@@ -4,8 +4,9 @@ The website for **Accel Financial**, a group of four businesses built around one
 
 1. **Accel Trading** (live): AI strategies trading only the founders' capital for 24 months, with a
    daily trade-log fingerprint and independent verification. Page: `trading.html`.
-2. **Accel Research** (launching): the free Accel Daily Brief, a weekday market newsletter paid for by
-   sponsors, plus a monthly Inside Accel Trading section. Page: `research.html`.
+2. **Research Flow 360** (launching, by Accel Financial Solutions): a free weekday market newsletter paid
+   for by sponsors, plus a monthly Inside Accel Trading section. Page: `research.html`; standalone site for
+   researchflow360.com in `researchflow360/` (see its README for hosting).
 3. **Accel Signals** (in development): the signal engine in `signals/` fingerprints each day's
    signals before the open. Licensing to institutions opens only after verification. Page: `signals.html`.
 4. **Accel Fund** (gated): a private fund, only after verification.
@@ -17,7 +18,8 @@ Plain HTML, CSS and JavaScript. No build step, no dependencies.
 ```
 index.html          group home page (built)
 trading.html        1 · Accel Trading (built)
-research.html       2 · Accel Research (built)
+research.html       2 · Research Flow 360 (built)
+researchflow360/    standalone Research Flow 360 site for researchflow360.com (built)
 signals.html        3 · Accel Signals (built)
 signals/            the Accel Signals engine (Python, stdlib only); see signals/README.md
 404.html            not-found page
