@@ -43,11 +43,10 @@ PAGES = {
         cta=("#start", "Get updates")),
     "research": dict(
         file="research.html", title="Accel Research", sub="Research",
-        desc="Accel Research publishes the monthly letter and weekly lab notes of an AI trading firm: "
-             "methods, results and failed ideas. No stock tips.",
-        nav=[("#get", "What you get"), ("#rules", "Our rules"), ("#pricing", "Membership"),
-             ("#faq", "FAQ")],
-        cta=("#start", "Get the free letter")),
+        desc="The Accel Daily Brief: the stories that move markets, in plain English, every weekday before "
+             "7:00 am ET. Free, sourced, and never stock tips.",
+        nav=[("#inside", "What's inside"), ("#rules", "How we work"), ("#faq", "FAQ")],
+        cta=("#start", "Get the Daily Brief")),
 }
 
 FOOTER_LEGAL = (
@@ -111,7 +110,7 @@ def footer():
       </div>
       <nav class="footer__cols" aria-label="Footer">
         <div><h4>Businesses</h4><a href="trading.html">1 · Accel Trading</a><a href="research.html">2 · Accel Research</a><a href="signals.html">3 · Accel Signals</a><a href="index.html#later">4 · Accel Fund</a></div>
-        <div><h4>Read</h4><a href="research.html">Monthly letter</a><a href="trading.html#plan">The 4-step plan</a><a href="trading.html#calculator">Skill or luck?</a></div>
+        <div><h4>Read</h4><a href="research.html">The Daily Brief</a><a href="trading.html#plan">The 4-step plan</a><a href="trading.html#calculator">Skill or luck?</a></div>
         <div><h4>Group</h4><a href="index.html#rules">Group rules</a><a href="index.html#faq">FAQ</a><a href="index.html#start">Contact</a></div>
       </nav>
     </div>
