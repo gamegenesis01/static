@@ -169,6 +169,29 @@
     });
   }
 
+  /* Archive filters */
+  var filterBtns = $$("[data-filter]");
+  if (filterBtns.length) {
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var f = btn.getAttribute("data-filter");
+        filterBtns.forEach(function (b) { b.classList.toggle("is-on", b === btn); b.setAttribute("aria-pressed", String(b === btn)); });
+        $$("[data-kind]").forEach(function (li) { li.hidden = f !== "all" && li.getAttribute("data-kind") !== f; });
+      });
+    });
+  }
+
+  /* Extra sign-up forms (sidebar and others) */
+  $$("form[data-signup]").forEach(function (f) {
+    f.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var input = f.querySelector("input[type=email]"), msg = f.querySelector("[role=status]");
+      var val = input.value.trim(), ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val);
+      msg.textContent = ok ? (f.getAttribute("data-ok") || "Thanks: {email}.").replace("{email}", val) : "Enter an email like name@example.com.";
+      if (ok) input.value = "";
+    });
+  });
+
   /* Footer year */
   var y = $("#year");
   if (y) y.textContent = new Date().getFullYear();

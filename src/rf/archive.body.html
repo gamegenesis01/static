@@ -1,0 +1,55 @@
+<main id="main">
+
+<section class="page-hero">
+  <div class="wrap page-hero__in">
+    <p class="eyebrow">Archive</p>
+    <h1 class="display">Every issue, <em>in one place.</em></h1>
+    <p class="lede">Every Daily Brief, breaking alert, Weekend Wrap and Inside Accel Trading report, kept online with its sources and any corrections.</p>
+    <div class="issue__meta">
+      <span class="issue__sample">Sample archive</span>
+      <span>Illustrative issues, showing the layout before launch</span>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight" style="padding-top: clamp(32px, 4vw, 48px)">
+  <div class="wrap">
+    <div class="filters" role="group" aria-label="Filter issues">
+      <button type="button" class="chip is-on" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" class="chip" data-filter="daily" aria-pressed="false">Daily Brief</button>
+      <button type="button" class="chip" data-filter="alert" aria-pressed="false">Breaking alerts</button>
+      <button type="button" class="chip" data-filter="wrap" aria-pressed="false">Weekend Wrap</button>
+      <button type="button" class="chip" data-filter="inside" aria-pressed="false">Inside Accel Trading</button>
+    </div>
+    <ul class="arch">
+      <li data-kind="daily"><a href="brief.html"><time datetime="2026-11-19">Thu, Nov 19</time><span class="arch__t"><strong>The Fed holds, Washington buys time, and chips lead again</strong><span>Fed projections, the stopgap funding bill, a chipmaker's beat, mortgage rates</span></span><span class="pill pill--on">Daily</span></a></li>
+      <li data-kind="alert"><a href="brief.html"><time datetime="2026-11-18">Wed, Nov 18</time><span class="arch__t"><strong>Breaking: the Fed holds rates, signals one cut next year</strong><span>What changed in the projections, in three sentences</span></span><span class="pill pill--beta">Alert</span></a></li>
+      <li data-kind="daily"><a href="brief.html"><time datetime="2026-11-18">Wed, Nov 18</time><span class="arch__t"><strong>Fed day: what to expect at 2:00 pm</strong><span>The decision, the projections and the press conference, plus retail sales</span></span><span class="pill pill--on">Daily</span></a></li>
+      <li data-kind="daily"><a href="brief.html"><time datetime="2026-11-17">Tue, Nov 17</time><span class="arch__t"><strong>Retailers kick off the holiday season with mixed results</strong><span>Two big-box earnings, consumer confidence, oil's slide</span></span><span class="pill pill--on">Daily</span></a></li>
+      <li data-kind="wrap"><a href="brief.html"><time datetime="2026-11-14">Sat, Nov 14</time><span class="arch__t"><strong>The week in 5 charts</strong><span>Yields, the dollar, tech earnings, gold and jobless claims</span></span><span class="pill pill--off">Wrap</span></a></li>
+      <li data-kind="daily"><a href="brief.html"><time datetime="2026-11-13">Fri, Nov 13</time><span class="arch__t"><strong>Inflation cools a little; Washington's funding deadline nears</strong><span>Consumer prices, the stopgap talks, bank earnings</span></span><span class="pill pill--on">Daily</span></a></li>
+      <li data-kind="inside"><a href="brief.html"><time datetime="2026-11-02">Mon, Nov 2</time><span class="arch__t"><strong>Inside Accel Trading: October, mistakes first</strong><span>How our AI bots did against their benchmarks, and the risk limit we nearly hit</span></span><span class="pill pill--beta">Inside</span></a></li>
+      <li data-kind="daily"><a href="brief.html"><time datetime="2026-11-02">Mon, Nov 2</time><span class="arch__t"><strong>A busy week ahead: jobs, the Fed and 150 earnings reports</strong><span>The calendar for the week and what each event could move</span></span><span class="pill pill--on">Daily</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta" id="start">
+  <div class="wrap">
+    <div class="cta__box">
+      <div class="cta__lines" aria-hidden="true"></div>
+      <div class="cta__copy">
+        <h2 class="display display--cta">Never miss <em>an issue.</em></h2>
+        <p>Research Flow 360, free, every weekday before 7:00 am ET.</p>
+      </div>
+      <form class="cta__form" id="ctaForm" data-ok="You're in, {email}. Check your inbox to confirm, and your first Daily Brief arrives the next weekday morning." novalidate>
+        <label for="email" class="sr-only">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@email.com" autocomplete="email" required>
+        <button class="btn btn--signal" type="submit">Subscribe free</button>
+        <p class="cta__msg" id="ctaMsg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
