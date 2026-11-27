@@ -169,6 +169,50 @@
     });
   }
 
+  /* Live market snapshot: reads data/snapshot.json (updated twice each weekday) */
+  var snap = $("[data-snapshot]");
+  if (snap && window.fetch) {
+    var fmt = function (kind, v) {
+      if (v === null || v === undefined) return "—";
+      if (kind === "yield") return v.toFixed(2) + "%";
+      var d = kind === "usd0" ? 0 : 2;
+      return "$" + Number(v).toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
+    };
+    var sign = function (v, digits, suffix) {
+      if (v === null || v === undefined) return "";
+      return (v > 0 ? "+" : v < 0 ? "−" : "") + Math.abs(v).toFixed(digits) + (suffix || "");
+    };
+    fetch("data/snapshot.json", { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (data) {
+        var when = new Date(data.updated_at);
+        var time = when.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", timeZone: "America/New_York" });
+        var day = when.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", timeZone: "America/New_York" });
+        var label = data.session === "close" ? "Market close" : "Morning update";
+        $("[data-snapshot-label]", snap).textContent = "Market snapshot · " + label + ", " + time + " ET, " + day;
+        (data.items || []).forEach(function (it) {
+          var cell = $('[data-key="' + it.key + '"]', snap);
+          if (!cell) return;
+          $("b", cell).textContent = fmt(it.kind, it.price);
+          var chg = $("i", cell);
+          if (it.kind === "yield") chg.textContent = sign(it.change, 2, " pts");
+          else chg.textContent = sign(it.change_pct, 2, "%");
+          var dir = it.kind === "yield" ? it.change : it.change_pct;
+          chg.className = dir > 0 ? "chg-up" : dir < 0 ? "chg-down" : "";
+          var note = $("small", cell), start = data.start && data.start[it.key];
+          if (data.session === "close" && start && it.price) {
+            note.textContent = "8 am: " + fmt(it.kind, start);
+          } else if (it.stale || (it.as_of && it.as_of !== data.date)) {
+            note.textContent = it.as_of ? "as of " + it.as_of.slice(5).replace("-", "/") : "";
+          } else {
+            note.textContent = "";
+          }
+        });
+        snap.classList.add("is-live");
+      })
+      .catch(function () { /* no data file yet: keep the sample numbers */ });
+  }
+
   /* Archive filters */
   var filterBtns = $$("[data-filter]");
   if (filterBtns.length) {

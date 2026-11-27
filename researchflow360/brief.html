@@ -58,7 +58,7 @@
     <p class="lede">Six stories that matter before the bell, in five minutes.</p>
     <div class="issue__meta">
       <span class="issue__sample">Sample issue</span>
-      <span>Illustrative stories and numbers, showing the format</span>
+      <span>Illustrative stories showing the format; the market snapshot is live</span>
       <span>· 5 min read</span>
     </div>
   </div>
@@ -67,18 +67,19 @@
 <div class="wrap issue-wrap">
   <article class="issue">
 
-    <section class="issue__section" id="snapshot" aria-labelledby="h-snapshot">
-      <p class="issue__label" id="h-snapshot">Market snapshot · yesterday's close</p>
+    <section class="issue__section" id="snapshot" aria-labelledby="h-snapshot" data-snapshot>
+      <p class="issue__label" id="h-snapshot"><span class="live-dot" aria-hidden="true"></span><span data-snapshot-label>Market snapshot · sample numbers</span></p>
       <div class="snapshot">
-        <div><span>S&amp;P 500</span><b>6,012.40</b><i class="chg-up">+0.42%</i></div>
-        <div><span>Nasdaq</span><b>21,184.60</b><i class="chg-up">+0.61%</i></div>
-        <div><span>Dow</span><b>43,920.10</b><i class="chg-up">+0.18%</i></div>
-        <div><span>10-yr yield</span><b>4.18%</b><i class="chg-up">+0.03</i></div>
-        <div><span>Oil (WTI)</span><b>$71.20</b><i class="chg-down">−1.10%</i></div>
-        <div><span>Gold</span><b>$2,684</b><i class="chg-up">+0.35%</i></div>
-        <div><span>Bitcoin</span><b>$91,400</b><i class="chg-up">+2.40%</i></div>
-        <div><span>Dollar index</span><b>104.2</b><i class="chg-down">−0.20%</i></div>
+        <div data-key="spy"><span>S&amp;P 500 (SPY)</span><b>$716.70</b><i class="chg-down">−0.29%</i><small></small></div>
+        <div data-key="qqq"><span>Nasdaq 100 (QQQ)</span><b>$633.93</b><i class="chg-down">−0.65%</i><small></small></div>
+        <div data-key="dia"><span>Dow (DIA)</span><b>$501.27</b><i class="chg-up">+0.31%</i><small></small></div>
+        <div data-key="y10"><span>10-yr yield</span><b>4.18%</b><i class="chg-up">+0.03</i><small></small></div>
+        <div data-key="uso"><span>Oil (USO)</span><b>$139.89</b><i class="chg-up">+3.29%</i><small></small></div>
+        <div data-key="gld"><span>Gold (GLD)</span><b>$327.45</b><i class="chg-up">+0.61%</i><small></small></div>
+        <div data-key="btc"><span>Bitcoin</span><b>$60,744</b><i class="chg-up">+0.18%</i><small></small></div>
+        <div data-key="uup"><span>U.S. dollar (UUP)</span><b>$29.60</b><i class="chg-down">−0.10%</i><small></small></div>
       </div>
+      <p class="src" data-snapshot-src>Funds that track each index, plus bitcoin, from Finnhub; 10-year yield from the U.S. Treasury. Updated every weekday at about 8:05 am and 4:20 pm ET.</p>
     </section>
 
     <section class="issue__section" id="big-story" aria-labelledby="h-big">
