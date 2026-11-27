@@ -23,7 +23,7 @@ RF_MARK = ('<svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><rec
 def brand_html(p):
     if p.get("brand") == "rf360":
         return (f'{RF_MARK}\n      <span class="brand__name brand__name--rf">Research Flow 360'
-                f'<span class="brand__sub">Accel Financial Solutions</span></span>')
+                f'</span>')
     return f'{MARK}\n      <span class="brand__name">Accel<span class="brand__sub">{p["sub"]}</span></span>'
 
 

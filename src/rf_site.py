@@ -46,7 +46,7 @@ FOOTER_LEGAL = (
     "product. Sample issues, archive entries and figures shown before launch are illustrations.")
 
 BRAND = (f'{RF_MARK}\n      <span class="brand__name brand__name--rf">Research Flow 360'
-         f'<span class="brand__sub">Accel Financial Solutions</span></span>')
+         f'</span>')
 
 
 def header(key):
